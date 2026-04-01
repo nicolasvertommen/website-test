@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nero — Word Partner</title>
+  <meta name="description" content="Word partner bij Nero. Verdien passief inkomen met het snelst groeiende draagbare oplaadnetwerk van België.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2300e87b'/><text x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='18' font-weight='bold' font-family='Inter,sans-serif'>N</text></svg>">
+  <style>
+    .partner-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 160px 24px 80px;
+      background: var(--gray-50, #f8f9fa);
+    }
+
+    .partner-page-inner {
+      max-width: 640px;
+      width: 100%;
+    }
+
+    .partner-page .benefit-group {
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      padding: 48px 40px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .partner-page .benefit-group-header {
+      margin-bottom: 32px;
+    }
+
+    .partner-page .benefit-group-header h3 {
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    .partner-page .benefit-items {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 36px;
+    }
+
+    .partner-page .benefit-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .partner-page .benefit-item h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: var(--dark);
+    }
+
+    .partner-page .benefit-item p {
+      font-size: 0.92rem;
+      color: var(--gray-500, #6b7280);
+      line-height: 1.6;
+    }
+
+    .partner-page .benefit-check {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 201, 255, 0.1);
+      margin-top: 2px;
+    }
+
+    .partner-page .benefit-icon-wrap {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 201, 255, 0.1);
+      margin-bottom: 12px;
+    }
+
+    .partner-cta-wrap {
+      padding-top: 12px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gray-500, #6b7280);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      margin-bottom: 32px;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: var(--dark);
+    }
+
+    /* Partner form modal - custom for this page to avoid CSS conflict */
+    .partner-modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .partner-modal-overlay.open {
+      display: flex;
+    }
+
+    .partner-modal {
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.2);
+      max-height: 90vh;
+      overflow-y: auto;
+      width: 100%;
+      max-width: 520px;
+      transform: translateY(20px) scale(0.97);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .partner-modal-overlay.open .partner-modal {
+      transform: translateY(0) scale(1);
+    }
+
+    .partner-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 28px 32px 0;
+    }
+
+    .partner-modal-header h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--dark);
+    }
+
+    .partner-modal-header p {
+      font-size: 0.9rem;
+      color: var(--gray-500, #6b7280);
+      margin-top: 4px;
+    }
+
+    .partner-modal-close {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--gray-500, #6b7280);
+      padding: 4px;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+
+    .partner-modal-close:hover {
+      background: var(--gray-100, #f3f4f6);
+    }
+
+    .partner-modal-body {
+      padding: 24px 32px 32px;
+    }
+
+    @media (max-width: 768px) {
+      .partner-page {
+        padding: 120px 16px 60px;
+      }
+
+      .partner-page .benefit-group {
+        padding: 32px 24px;
+      }
+
+      .partner-page .benefit-group-header h3 {
+        font-size: 1.6rem;
+      }
+
+      .partner-modal-header {
+        padding: 24px 20px 0;
+      }
+
+      .partner-modal-body {
+        padding: 20px 20px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-inner container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png.png" alt="Nero" class="logo-img">
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html#how-it-works">Hoe het werkt</a>
+        <a href="index.html#product">Product</a>
+        <a href="index.html#benefits">Voordelen</a>
+        <a href="index.html#testimonials">Klanten</a>
+        <a href="index.html#faq">FAQ</a>
+      </div>
+      <div class="nav-actions">
+        <a href="partner.html" class="btn btn-primary btn-sm">Word partner</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PARTNER PAGE -->
+  <div class="partner-page">
+    <div class="partner-page-inner">
+      <a href="index.html" class="back-link">
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M16 10H4m0 0l4-4m-4 4l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Terug naar home
+      </a>
+
+      <div class="benefit-group fade-up">
+        <div class="benefit-group-header">
+          <div class="benefit-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <rect x="4" y="12" width="20" height="12" rx="2" stroke="#00c9ff" stroke-width="2.5"/>
+              <path d="M8 12V8a6 6 0 0112 0v4" stroke="#00c9ff" stroke-width="2.5"/>
+              <circle cx="14" cy="19" r="2" fill="#00c9ff"/>
+            </svg>
+          </div>
+          <h3>Voor locaties</h3>
+        </div>
+        <div class="benefit-items">
+          <div class="benefit-item">
+            <div class="benefit-check">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M5 9l3 3 5-6" stroke="#00c9ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <h4>Extra inkomstenbron</h4>
+              <p>Verdien een deel van elke verhuur op jouw locatie. Nul moeite.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-check">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M5 9l3 3 5-6" stroke="#00c9ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <h4>Gelukkigere klanten</h4>
+              <p>Gasten blijven langer als hun telefoon het doet. Meer tijd = meer omzet.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-check">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M5 9l3 3 5-6" stroke="#00c9ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <h4>Nul onderhoud</h4>
+              <p>Wij regelen alles — installatie, logistiek en support. Jij steekt gewoon de stekker erin.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-check">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M5 9l3 3 5-6" stroke="#00c9ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <h4>Ontzorg je personeel</h4>
+              <p>Het laadstation is volledig zelfsturend — hierdoor kan je personeel focussen op wat echt telt, namelijk de service naar klanten toe.</p>
+            </div>
+          </div>
+        </div>
+        <div class="partner-cta-wrap">
+          <a href="#" class="btn btn-primary btn-lg btn-glow" id="openFormBtn">
+            Aan de slag
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PARTNER FORM MODAL -->
+  <div class="partner-modal-overlay" id="partnerModalOverlay">
+    <div class="partner-modal">
+      <div class="partner-modal-header">
+        <div>
+          <h3>Word partner</h3>
+          <p>Ontvang een Nero laadstation in jouw zaak. Verdien passief een inkomen.</p>
+        </div>
+        <button class="partner-modal-close" id="closeFormBtn" aria-label="Sluiten">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="partner-modal-body">
+        <form class="partner-form" id="partnerFormEl">
+          <div class="form-group">
+            <label for="venueName">Naam locatie</label>
+            <input type="text" id="venueName" name="venueName" placeholder="bv. Het Grand Caf&eacute;" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contactPerson">Contactpersoon</label>
+              <input type="text" id="contactPerson" name="contactPerson" placeholder="Volledige naam" required>
+            </div>
+            <div class="form-group">
+              <label for="contactPhone">Telefoonnummer</label>
+              <input type="tel" id="contactPhone" name="contactPhone" placeholder="+32 ...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Email</label>
+            <input type="email" id="contactEmail" name="contactEmail" placeholder="you@venue.com" required>
+          </div>
+          <div class="form-group">
+            <label for="venueLocation">Locatie / Stad</label>
+            <input type="text" id="venueLocation" name="venueLocation" placeholder="bv. Brussel, België" required>
+          </div>
+          <div class="form-group">
+            <label for="venueType">Type locatie</label>
+            <select id="venueType" name="venueType">
+              <option value="" disabled selected>Selecteer type...</option>
+              <option value="bar">Bar / Restaurant</option>
+              <option value="club">Nachtclub</option>
+              <option value="festival">Festival / Evenement</option>
+              <option value="hotel">Hotel / Hostel</option>
+              <option value="coworking">Coworking / Kantoor</option>
+              <option value="retail">Winkel / Retail</option>
+              <option value="other">Andere</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-full">
+            Aanvraag indienen
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+        <div class="form-success" id="formSuccess" style="display:none;">
+          <div class="success-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" fill="rgba(0,232,123,0.1)"/><path d="M16 24l6 6 10-12" stroke="#00e87b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Aanvraag ontvangen!</h3>
+          <p>Bedankt voor je interesse. Ons partnershipsteam neemt binnen 24 uur contact met je op.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Mobile nav toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (mobileToggle && navLinks) {
+      mobileToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+        mobileToggle.classList.toggle('active');
+      });
+    }
+
+    // Partner modal open/close
+    const modalOverlay = document.getElementById('partnerModalOverlay');
+    const openBtn = document.getElementById('openFormBtn');
+    const closeBtn = document.getElementById('closeFormBtn');
+
+    openBtn.addEventListener('click', e => {
+      e.preventDefault();
+      modalOverlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modalOverlay.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+
+    modalOverlay.addEventListener('click', e => {
+      if (e.target === modalOverlay) {
+        modalOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && modalOverlay.classList.contains('open')) {
+        modalOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Form submission
+    const partnerForm = document.getElementById('partnerFormEl');
+    const formSuccess = document.getElementById('formSuccess');
+    if (partnerForm) {
+      partnerForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const formData = new FormData(partnerForm);
+        const data = Object.fromEntries(formData.entries());
+
+        const subject = encodeURIComponent('Nieuwe partner aanvraag: ' + (data.venueName || ''));
+        const body = encodeURIComponent(
+          'Naam locatie: ' + (data.venueName || '') + '\n' +
+          'Contactpersoon: ' + (data.contactPerson || '') + '\n' +
+          'Telefoonnummer: ' + (data.contactPhone || '') + '\n' +
+          'Email: ' + (data.contactEmail || '') + '\n' +
+          'Locatie / Stad: ' + (data.venueLocation || '') + '\n' +
+          'Type locatie: ' + (data.venueType || '')
+        );
+        window.open('mailto:nerocharge@outlook.com?subject=' + subject + '&body=' + body, '_self');
+
+        partnerForm.style.display = 'none';
+        formSuccess.style.display = 'flex';
+      });
+    }
+
+    // Fade-up animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
