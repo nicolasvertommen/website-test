@@ -49,6 +49,7 @@ body {
   background: var(--white);
   line-height: 1.6;
   overflow-x: hidden;
+  touch-action: pan-y;
 }
 
 .container {
