@@ -436,7 +436,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---- Partner form submission (Formspree) ----
-  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mgoplera';
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mqegdknv';
 
   const partnerForm = document.getElementById('partnerForm');
   const formSuccess = document.getElementById('formSuccess');
