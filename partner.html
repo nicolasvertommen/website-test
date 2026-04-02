@@ -402,28 +402,38 @@
       }
     });
 
-    // Form submission
+    // Form submission (Formspree)
+    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
     const partnerForm = document.getElementById('partnerFormEl');
     const formSuccess = document.getElementById('formSuccess');
     if (partnerForm) {
-      partnerForm.addEventListener('submit', e => {
+      partnerForm.addEventListener('submit', async e => {
         e.preventDefault();
-        const formData = new FormData(partnerForm);
-        const data = Object.fromEntries(formData.entries());
+        const submitBtn = partnerForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = 'Bezig met verzenden…';
+        submitBtn.disabled = true;
 
-        const subject = encodeURIComponent('Nieuwe partner aanvraag: ' + (data.venueName || ''));
-        const body = encodeURIComponent(
-          'Naam locatie: ' + (data.venueName || '') + '\n' +
-          'Contactpersoon: ' + (data.contactPerson || '') + '\n' +
-          'Telefoonnummer: ' + (data.contactPhone || '') + '\n' +
-          'Email: ' + (data.contactEmail || '') + '\n' +
-          'Locatie / Stad: ' + (data.venueLocation || '') + '\n' +
-          'Type locatie: ' + (data.venueType || '')
-        );
-        window.open('mailto:nerocharge@outlook.com?subject=' + subject + '&body=' + body, '_self');
+        try {
+          const response = await fetch(FORMSPREE_ENDPOINT, {
+            method: 'POST',
+            body: new FormData(partnerForm),
+            headers: { 'Accept': 'application/json' }
+          });
 
-        partnerForm.style.display = 'none';
-        formSuccess.style.display = 'flex';
+          if (response.ok) {
+            partnerForm.style.display = 'none';
+            formSuccess.style.display = 'flex';
+          } else {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+            alert('Er ging iets mis. Probeer het opnieuw of stuur een mail naar nerocharge@outlook.com.');
+          }
+        } catch (err) {
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+          alert('Geen verbinding. Controleer je internet en probeer opnieuw.');
+        }
       });
     }
 
