@@ -320,7 +320,7 @@
               <input type="text" id="contactPerson" name="contactPerson" placeholder="Volledige naam" required>
             </div>
             <div class="form-group">
-              <label for="contactPhone">Telefoonnummer</label>
+              <label for="contactPhone">Telefoonnummer <span style="font-weight:400;color:var(--gray-500)">(optioneel)</span></label>
               <input type="tel" id="contactPhone" name="contactPhone" placeholder="+32 ...">
             </div>
           </div>
@@ -329,12 +329,12 @@
             <input type="email" id="contactEmail" name="contactEmail" placeholder="you@venue.com" required>
           </div>
           <div class="form-group">
-            <label for="venueLocation">Locatie / Stad</label>
-            <input type="text" id="venueLocation" name="venueLocation" placeholder="bv. Brussel, België" required>
+            <label for="venueLocation">Locatie / Stad <span style="font-weight:400;color:var(--gray-500)">(optioneel)</span></label>
+            <input type="text" id="venueLocation" name="venueLocation" placeholder="bv. Brussel, België">
           </div>
           <div class="form-group">
             <label for="venueType">Type locatie</label>
-            <select id="venueType" name="venueType">
+            <select id="venueType" name="venueType" required>
               <option value="" disabled selected>Selecteer type...</option>
               <option value="bar">Bar / Restaurant</option>
               <option value="club">Nachtclub</option>
