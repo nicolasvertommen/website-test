@@ -342,7 +342,8 @@ document.addEventListener('DOMContentLoaded', () => {
     { id: 'kikibeach',    name: 'Kiki Beach',        lat: 51.3447, lng: 3.2593, address: 'Zeedijk-Duinbergen 387, 8301 Knokke-Heist' },
     { id: 'indibeach',    name: 'Indi Beach',        lat: 51.3535, lng: 3.2898, address: 'Zeedijk-Het Zoute 648, 8300 Knokke-Heist' },
     { id: 'knokkestrand', name: 'Knokke Strand',     lat: 51.3539, lng: 3.2918, address: 'Zeedijk-Het Zoute 664, 8300 Knokke-Heist' },
-    { id: 'yssisbeach',   name: 'Yssis Beach',       lat: 51.3501, lng: 3.2822, address: 'Zeedijk-Albertstrand 542, 8300 Knokke-Heist' },
+    { id: 'yssisbeach',       name: 'Yssis Beach',        lat: 51.3501, lng: 3.2822, address: 'Zeedijk-Albertstrand 542, 8300 Knokke-Heist' },
+    { id: 'lichttorenstrand', name: 'Lichttorenstrand',   lat: 51.3542, lng: 3.2938, address: 'Zeedijk-Het Zoute 680, 8300 Knokke-Heist' },
   ];
 
   let leafletMap = null;
