@@ -43,13 +43,17 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: var(--font);
   color: var(--dark);
   background: var(--white);
   line-height: 1.6;
-  overflow-x: hidden;
   touch-action: pan-y;
+  overflow-x: clip;
 }
 
 .container {
