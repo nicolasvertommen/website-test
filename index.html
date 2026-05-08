@@ -72,12 +72,90 @@
         }
       ]
     },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "3",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+32468060276",
       "contactType": "customer service",
       "availableLanguage": ["Dutch", "French", "English"]
     }
+  }
+  </script>
+  <!-- Product + Review Schema voor Google Rich Results (sterren) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Powerbank huren bij Nero Charge",
+    "description": "Huur een powerbank met ingebouwde USB-C en Lightning kabel. Contactloos betalen, overal terugbrengen in het Nero-netwerk. Beschikbaar in Antwerpen, Knokke-Heist en 30+ locaties in België.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Nero Charge"
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.nerocharge.be/",
+      "seller": {
+        "@type": "Organization",
+        "name": "Nero Charge"
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "3",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Sofie V."
+        },
+        "reviewBody": "Telefoon was bijna dood tijdens een avondje uit in Antwerpen. Bij Tabanco een Nero-station gevonden, gescand, en in 45 minuten weer op 50%. Top!"
+      },
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Emma L."
+        },
+        "reviewBody": "Zaten met vrienden bij Zorro en iedereen z'n telefoon was bijna plat. Nero-station stond er gewoon, even tikken en klaar. Echt handig!"
+      },
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Laura D."
+        },
+        "reviewBody": "Hele dag aan het strand bij Indi Beach en telefoon was leeg. Nero-station stond gewoon bij de ingang, even tikken en opladen terwijl je van de zon geniet. Perfect!"
+      }
+    ]
   }
   </script>
   <!-- FAQ Schema voor Google Rich Results -->
@@ -145,7 +223,7 @@
   <nav class="nav" id="nav">
     <div class="nav-inner container">
       <a href="#" class="logo">
-        <img src="images/logo.png.png" alt="Nero" class="logo-img">
+        <img src="images/logo.png.png" alt="Nero Charge logo — powerbank verhuur in België" class="logo-img">
       </a>
       <div class="nav-links" id="navLinks">
         <a href="#how-it-works">Hoe het werkt</a>
@@ -206,7 +284,7 @@
       </div>
       <div class="hero-visual fade-right">
         <div class="hero-image-wrap float-slow">
-          <img src="images/hero-image.png" alt="Nero charging station" class="hero-image">
+          <img src="images/hero-image.png" alt="Nero Charge powerbank laadstation — huur en retourneer overal in België" class="hero-image">
           <div class="station-glow"></div>
         </div>
       </div>
@@ -228,7 +306,7 @@
         <div class="step-card fade-up" data-delay="0">
           <div class="step-num">01</div>
           <div class="step-icon">
-            <img src="images/Step-1.png" alt="Tap & betaal" class="step-img">
+            <img src="images/Step-1.png" alt="Stap 1: Tik contactloos op het Nero-station en betaal met je bankkaart of gsm" class="step-img">
           </div>
           <h3 class="step-title">Tap & betaal</h3>
           <p class="step-desc">Vind een Nero-station, betaal contactloos, en pak een volledig opgeladen powerbank.</p>
@@ -239,7 +317,7 @@
         <div class="step-card fade-up" data-delay="300">
           <div class="step-num">02</div>
           <div class="step-icon">
-            <img src="images/Step-2.png" alt="Overal opladen" class="step-img">
+            <img src="images/Step-2.png" alt="Stap 2: Laad je telefoon op met de ingebouwde USB-C of Lightning kabel van Nero" class="step-img">
           </div>
           <h3 class="step-title">Overal opladen</h3>
           <p class="step-desc">Werkt met elk toestel. USB-C en Lightning, allemaal ingebouwd.</p>
@@ -250,7 +328,7 @@
         <div class="step-card fade-up" data-delay="600">
           <div class="step-num">03</div>
           <div class="step-icon">
-            <img src="images/Step-3.png" alt="Terugbrengen & klaar" class="step-img">
+            <img src="images/Step-3.png" alt="Stap 3: Breng de Nero powerbank terug bij eender welk station in het netwerk" class="step-img">
           </div>
           <h3 class="step-title">Terugbrengen & klaar</h3>
           <p class="step-desc">Plaats hem terug in eender welk Nero-station. De betaling stopt automatisch.</p>
@@ -274,7 +352,7 @@
       <div class="product-grid">
         <div class="product-visual fade-left">
           <div class="product-card-large">
-            <img src="images/Horeca.png" alt="Nero laadstation in horeca" style="width:100%; height:100%; object-fit:cover; border-radius: var(--radius-lg);">
+            <img src="images/Horeca.png" alt="Nero Charge laadstation opgesteld in een bar of restaurant in Antwerpen" style="width:100%; height:100%; object-fit:cover; border-radius: var(--radius-lg);">
             <div class="product-tag-float tag-1">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 3l-8 10" stroke="#00e87b" stroke-width="2" stroke-linecap="round"/><path d="M3 8l3 5" stroke="#00e87b" stroke-width="2" stroke-linecap="round"/></svg>
               Snel opladen
@@ -457,29 +535,29 @@
       <!-- Logo Carousel -->
       <div class="logos-carousel fade-up">
         <div class="logos-track">
-          <div class="logo-item"><img src="images/berlin.png.jpg" alt="Berlin"></div>
-          <div class="logo-item"><img src="images/Tabanco.png" alt="Tabanco"></div>
-          <div class="logo-item"><img src="images/Cantine.png" alt="Cantine"></div>
-          <div class="logo-item"><img src="images/Barbossa.png" alt="Barbossa"></div>
-          <div class="logo-item"><img src="images/Zorro.png" alt="Zorro"></div>
-          <div class="logo-item"><img src="images/Cordobar.png" alt="Cordobar"></div>
-          <div class="logo-item"><img src="images/Indibeach.png" alt="Indi Beach"></div>
-          <div class="logo-item"><img src="images/Kikibeach.png" alt="Kiki Beach"></div>
-          <div class="logo-item"><img src="images/Knokkestrand.png" alt="Knokke Strand"></div>
-          <div class="logo-item"><img src="images/Yssisbeach.png" alt="Yssis Beach"></div>
-          <div class="logo-item"><img src="images/lichttorenstrand.png" alt="Lichttorenstrand"></div>
+          <div class="logo-item"><img src="images/berlin.png.jpg" alt="Berlin Antwerp — Nero Charge partner Antwerpen"></div>
+          <div class="logo-item"><img src="images/Tabanco.png" alt="Tabanco — Nero Charge partner Antwerpen"></div>
+          <div class="logo-item"><img src="images/Cantine.png" alt="Cantine Antwerp — Nero Charge partner Antwerpen"></div>
+          <div class="logo-item"><img src="images/Barbossa.png" alt="Caffè Barbossa — Nero Charge partner Antwerpen"></div>
+          <div class="logo-item"><img src="images/Zorro.png" alt="Bar Zorro — Nero Charge partner Antwerpen"></div>
+          <div class="logo-item"><img src="images/Cordobar.png" alt="Cordobar — Nero Charge partner Antwerpen"></div>
+          <div class="logo-item"><img src="images/Indibeach.png" alt="Indi Beach — Nero Charge partner Knokke-Heist"></div>
+          <div class="logo-item"><img src="images/Kikibeach.png" alt="Kiki Beach — Nero Charge partner Knokke-Heist"></div>
+          <div class="logo-item"><img src="images/Knokkestrand.png" alt="Knokke Strand — Nero Charge partner Knokke-Heist"></div>
+          <div class="logo-item"><img src="images/Yssisbeach.png" alt="Yssis Beach — Nero Charge partner Knokke-Heist"></div>
+          <div class="logo-item"><img src="images/lichttorenstrand.png" alt="Lichttorenstrand — Nero Charge partner Knokke-Heist"></div>
           <!-- Duplicate for seamless infinite loop -->
-          <div class="logo-item"><img src="images/berlin.png.jpg" alt="Berlin"></div>
-          <div class="logo-item"><img src="images/Tabanco.png" alt="Tabanco"></div>
-          <div class="logo-item"><img src="images/Cantine.png" alt="Cantine"></div>
-          <div class="logo-item"><img src="images/Barbossa.png" alt="Barbossa"></div>
-          <div class="logo-item"><img src="images/Zorro.png" alt="Zorro"></div>
-          <div class="logo-item"><img src="images/Cordobar.png" alt="Cordobar"></div>
-          <div class="logo-item"><img src="images/Indibeach.png" alt="Indi Beach"></div>
-          <div class="logo-item"><img src="images/Kikibeach.png" alt="Kiki Beach"></div>
-          <div class="logo-item"><img src="images/Knokkestrand.png" alt="Knokke Strand"></div>
-          <div class="logo-item"><img src="images/Yssisbeach.png" alt="Yssis Beach"></div>
-          <div class="logo-item"><img src="images/lichttorenstrand.png" alt="Lichttorenstrand"></div>
+          <div class="logo-item"><img src="images/berlin.png.jpg" alt="Berlin Antwerp — Nero Charge partner Antwerpen"></div>
+          <div class="logo-item"><img src="images/Tabanco.png" alt="Tabanco — Nero Charge partner Antwerpen"></div>
+          <div class="logo-item"><img src="images/Cantine.png" alt="Cantine Antwerp — Nero Charge partner Antwerpen"></div>
+          <div class="logo-item"><img src="images/Barbossa.png" alt="Caffè Barbossa — Nero Charge partner Antwerpen"></div>
+          <div class="logo-item"><img src="images/Zorro.png" alt="Bar Zorro — Nero Charge partner Antwerpen"></div>
+          <div class="logo-item"><img src="images/Cordobar.png" alt="Cordobar — Nero Charge partner Antwerpen"></div>
+          <div class="logo-item"><img src="images/Indibeach.png" alt="Indi Beach — Nero Charge partner Knokke-Heist"></div>
+          <div class="logo-item"><img src="images/Kikibeach.png" alt="Kiki Beach — Nero Charge partner Knokke-Heist"></div>
+          <div class="logo-item"><img src="images/Knokkestrand.png" alt="Knokke Strand — Nero Charge partner Knokke-Heist"></div>
+          <div class="logo-item"><img src="images/Yssisbeach.png" alt="Yssis Beach — Nero Charge partner Knokke-Heist"></div>
+          <div class="logo-item"><img src="images/lichttorenstrand.png" alt="Lichttorenstrand — Nero Charge partner Knokke-Heist"></div>
         </div>
       </div>
       <div class="testimonials-grid">
@@ -705,7 +783,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <a href="#" class="logo">
-            <img src="images/logo.png.png" alt="Nero" class="logo-img footer-logo-img">
+            <img src="images/logo.png.png" alt="Nero Charge logo" class="logo-img footer-logo-img">
           </a>
           <p class="footer-desc">Het snelst groeiende powerbank oplaadnetwerk van Europa.</p>
           <div class="footer-social">
