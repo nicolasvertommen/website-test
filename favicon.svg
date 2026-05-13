@@ -5,14 +5,17 @@
       <stop offset="100%" stop-color="#00c9ff"/>
     </linearGradient>
   </defs>
-  <!-- Dark background fills the full square -->
-  <rect width="512" height="512" fill="#0f0f0f"/>
-  <!-- Bold "N" centered, gradient fill, large enough to dominate the circle -->
-  <text x="256" y="390"
-        font-family="Arial Black, 'Helvetica Neue', sans-serif"
-        font-weight="900"
-        font-size="400"
-        fill="url(#g)"
-        text-anchor="middle"
-        letter-spacing="-8">N</text>
+  <!-- Dark background -->
+  <rect width="512" height="512" fill="#111111"/>
+  <!-- NERO text — centered, fills the circle, bold gradient -->
+  <text
+    x="256"
+    y="256"
+    font-family="Arial Black, 'Arial Bold', Impact, sans-serif"
+    font-weight="900"
+    font-size="168"
+    fill="url(#g)"
+    text-anchor="middle"
+    dominant-baseline="central"
+    letter-spacing="-2">NERO</text>
 </svg>
