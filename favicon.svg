@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e87b"/>
+      <stop offset="100%" stop-color="#00c9ff"/>
+    </linearGradient>
+  </defs>
+  <!-- Dark background fills the full square -->
+  <rect width="512" height="512" fill="#0f0f0f"/>
+  <!-- Bold "N" centered, gradient fill, large enough to dominate the circle -->
+  <text x="256" y="390"
+        font-family="Arial Black, 'Helvetica Neue', sans-serif"
+        font-weight="900"
+        font-size="400"
+        fill="url(#g)"
+        text-anchor="middle"
+        letter-spacing="-8">N</text>
+</svg>
