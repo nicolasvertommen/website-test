@@ -344,6 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { id: 'knokkestrand', name: 'Knokke Strand',     lat: 51.3539, lng: 3.2918, address: 'Zeedijk-Het Zoute 664, 8300 Knokke-Heist' },
     { id: 'yssisbeach',       name: 'Yssis Beach',        lat: 51.3501, lng: 3.2822, address: 'Zeedijk-Albertstrand 542, 8300 Knokke-Heist' },
     { id: 'lichttorenstrand', name: 'Lichttorenstrand',   lat: 51.3542, lng: 3.2938, address: 'Zeedijk-Het Zoute 680, 8300 Knokke-Heist' },
+    { id: 'cordobar',        name: 'Cordobar',           lat: 51.2111, lng: 4.3965, address: 'Volkstraat 25, 2000 Antwerpen' },
   ];
 
   let leafletMap = null;
