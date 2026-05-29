@@ -346,6 +346,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { id: 'lichttorenstrand', name: 'Lichttorenstrand',   lat: 51.3542, lng: 3.2938, address: 'Zeedijk-Het Zoute 680, 8300 Knokke-Heist' },
     { id: 'cordobar',        name: 'Cordobar',           lat: 51.2111, lng: 4.3965, address: 'Volkstraat 25, 2000 Antwerpen' },
     { id: 'fidele',          name: 'Fidele',             lat: 51.2108, lng: 4.3898, address: 'Wapenstraat 18, 2000 Antwerpen' },
+    { id: 'barduport',       name: 'Bar Du Port',        lat: 51.2302, lng: 4.4108, address: 'Napoleonkaai 53, 2000 Antwerpen' },
   ];
 
   let leafletMap = null;
