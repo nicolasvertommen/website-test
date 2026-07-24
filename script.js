@@ -347,6 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { id: 'fidele',          name: 'Fidele',             lat: 51.2108, lng: 4.3898, address: 'Wapenstraat 18, 2000 Antwerpen' },
     { id: 'barduport',       name: 'Bar Du Port',        lat: 51.2302, lng: 4.4108, address: 'Napoleonkaai 53, 2000 Antwerpen' },
     { id: 'barbossa',        name: 'Barbossa',           lat: 51.2130, lng: 4.4052, address: 'Sint-Jorispoort 1, 2000 Antwerpen' },
+    { id: 'brunellos',       name: "Brunello's",         lat: 51.3514, lng: 3.2839, address: 'Rubensplein, Albertstrand, 8300 Knokke-Heist' },
   ];
 
   let leafletMap = null;
