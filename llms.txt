@@ -1,0 +1,34 @@
+# Nero Charge
+
+## Wat is Nero Charge?
+Nero Charge is een Belgisch bedrijf dat powerbanks verhuurt op gedeelde laadstations in horecagelegenheden, strandclubs en uitgaansgelegenheden. Klanten huren een powerbank contactloos via tap-to-pay (bankkaart of gsm), laden hun telefoon op, en brengen de powerbank terug bij hetzelfde station. Geen app nodig.
+
+## Dienst
+- Powerbank verhuur (shared powerbank rental)
+- Contactloos betalen via bankkaart of smartphone (tap-to-pay)
+- USB-C en Lightning kabels ingebouwd in elke powerbank
+- 10W laadvermogen
+- Beschikbaar in 30+ locaties in België
+
+## Locaties
+Nero Charge is actief in:
+- **Antwerpen**: Berlin Antwerp (Kleine Markt 1), Tabanco (Scheldestraat 36), Cantine Antwerp (Scheldestraat 77), Bar Zorro (Hendrik Conscienceplein 5), Cordobar (Volkstraat 25), Fidele (Wapenstraat 18), Bar Du Port (Napoleonkaai 53), Barbossa (Sint-Jorispoort 1)
+- **Knokke-Heist**: Kiki Beach (Zeedijk-Duinbergen 387), Indi Beach (Zeedijk-Het Zoute 648), Knokke Strand (Zeedijk-Het Zoute 664), Yssis Beach (Zeedijk-Albertstrand 542), Lichttorenstrand (Zeedijk-Het Zoute 680), Brunello's Beach Club (Rubensplein, Albertstrand)
+
+## Contact
+- Website: https://www.nerocharge.be
+- Telefoon: +32 468 06 02 76
+- E-mail: nerocharge@outlook.com
+- Algemene voorwaarden: https://www.nerocharge.be/algemene-voorwaarden.html
+
+## Voor locaties (partners)
+Horeca-uitbaters, strandclubs en evenementenlocaties kunnen Nero Charge gratis installeren. Nero regelt installatie, logistiek en support. Locaties ontvangen een commissie op elke verhuur.
+
+## Veelgestelde vragen
+- **Hoe werkt het?** Tap je bankkaart of gsm op het station, neem een powerbank, laad je telefoon op, breng hem terug.
+- **Heeft men een app nodig?** Nee, geen app vereist.
+- **Waar kan ik terugbrengen?** De powerbank moet teruggebracht worden bij hetzelfde station waar je hem gehuurd hebt.
+- **Wat kost het?** Betaling per gebruik, transparante prijzen, geen verborgen kosten.
+
+## Taal
+De website en dienst zijn beschikbaar in het Nederlands. De doelmarkt is België (Antwerpen en Knokke-Heist).
