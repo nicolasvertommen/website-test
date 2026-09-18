@@ -11,7 +11,8 @@ const ALLOWED_ORIGINS = [
   "https://nerocharge.be",
   "http://localhost:3000",
   "http://127.0.0.1:3000",
-];
+  process.env.EXTRA_ALLOWED_ORIGIN,
+].filter(Boolean);
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 

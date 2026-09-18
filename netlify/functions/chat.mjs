@@ -7,12 +7,14 @@ const MAX_HISTORY_TURNS = 20;
 const RATE_LIMIT_WINDOW_MS = 60_000;
 const RATE_LIMIT_MAX_REQUESTS = 10;
 
+// EXTRA_ALLOWED_ORIGIN laat je een Netlify preview-URL toe zonder code te wijzigen.
 const ALLOWED_ORIGINS = [
   "https://www.nerocharge.be",
   "https://nerocharge.be",
   "http://localhost:3000",
   "http://127.0.0.1:3000",
-];
+  process.env.EXTRA_ALLOWED_ORIGIN,
+].filter(Boolean);
 
 const KNOWLEDGE_BASE = `
 # Nero Charge — bedrijfsinformatie
