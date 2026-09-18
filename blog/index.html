@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Nero Charge</title>
+  <meta name="description" content="Lees onze blog over horeca-oplossingen, powerbank trends en tips voor venues.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" href="../images/logo.png.png">
+  <link rel="apple-touch-icon" href="../images/logo.png.png">
+  <style>
+    .blog-page {
+      padding: 160px 24px 100px;
+      background: var(--gray-50, #f8f9fa);
+      min-height: 100vh;
+    }
+    .blog-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .blog-header {
+      margin-bottom: 60px;
+      text-align: center;
+    }
+    .blog-header h1 {
+      font-size: 2.4rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: var(--gray-900, #111);
+      margin-bottom: 16px;
+    }
+    .blog-header p {
+      font-size: 1.1rem;
+      color: var(--gray-600, #555);
+      line-height: 1.6;
+    }
+    .blog-posts {
+      display: grid;
+      gap: 32px;
+    }
+    .blog-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      border: 1px solid rgba(0,0,0,0.04);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .blog-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .blog-meta {
+      display: flex;
+      gap: 16px;
+      font-size: 0.85rem;
+      color: var(--gray-500);
+      margin-bottom: 12px;
+    }
+    .blog-card h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--gray-900, #111);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .blog-card p {
+      font-size: 0.95rem;
+      color: var(--gray-600, #555);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .blog-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--green);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: gap 0.2s;
+    }
+    .blog-card:hover .blog-link {
+      gap: 12px;
+    }
+    .blog-link svg {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.2s;
+    }
+    .blog-card:hover .blog-link svg {
+      transform: translateX(2px);
+    }
+    .blog-empty {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--gray-500);
+    }
+    .blog-empty p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gray-500);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      margin-bottom: 40px;
+      transition: color 0.2s;
+    }
+    .back-link:hover {
+      color: var(--green);
+    }
+    @media (max-width: 768px) {
+      .blog-page {
+        padding: 120px 16px 80px;
+      }
+      .blog-inner {
+        padding: 0;
+      }
+      .blog-card {
+        padding: 28px 20px;
+      }
+      .blog-header h1 {
+        font-size: 1.8rem;
+      }
+      .blog-card h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-inner container">
+      <a href="../index.html" class="logo">
+        <img src="../images/logo.png.png" alt="Nero Charge logo" class="logo-img">
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="../index.html#how-it-works">Hoe het werkt</a>
+        <a href="../index.html#product">Product</a>
+        <a href="../index.html#benefits">Voordelen</a>
+        <a href="../index.html#testimonials">Klanten</a>
+        <a href="../index.html#faq">FAQ</a>
+      </div>
+      <div class="nav-actions">
+        <a href="../partner.html" class="btn btn-primary btn-sm">Word partner</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BLOG PAGE -->
+  <main class="blog-page">
+    <div class="blog-inner">
+
+      <a href="../index.html" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Terug naar home
+      </a>
+
+      <div class="blog-header">
+        <h1>Blog</h1>
+        <p>Tips, trends en inzichten voor horecaondernemers.</p>
+      </div>
+
+      <div class="blog-posts">
+
+        <a href="horecasuccesformule.html" class="blog-card">
+          <div class="blog-meta">
+            <span>18 september 2026</span>
+            <span>5 min leesttijd</span>
+          </div>
+          <h2>De horecasuccesformule: waarom gasten langer blijven</h2>
+          <p>Leer hoe succesvolle bars en restaurants hun gasten niet alleen voorbij laten lopen, maar langer houden — en meer omzet genereren. Inclusief real-world tips van Nero-partners.</p>
+          <span class="blog-link">
+            Lees artikel
+            <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo">
+            <img src="../images/logo.png.png" alt="Nero Charge logo" class="logo-img footer-logo-img">
+          </a>
+          <p class="footer-desc">Het snelst groeiende powerbank oplaadnetwerk van Europa.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h5>Product</h5>
+            <a href="../index.html#how-it-works">Hoe het werkt</a>
+            <a href="../index.html#product">Functies</a>
+            <a href="../index.html#faq">FAQ</a>
+          </div>
+          <div class="footer-col">
+            <h5>Bedrijf</h5>
+            <a href="#">Over ons</a>
+            <a href="#">Vacatures</a>
+            <a href="../pers.html">Pers</a>
+          </div>
+          <div class="footer-col">
+            <h5>Partners</h5>
+            <a href="../partner.html">Word een partner</a>
+            <a href="mailto:nerocharge@outlook.com">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Nero. Alle rechten voorbehouden.</p>
+        <div class="footer-legal">
+          <a href="../privacybeleid.html">Privacy</a>
+          <a href="../algemene-voorwaarden.html">Algemene voorwaarden</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js" defer></script>
+  <script src="../chat-widget.js" defer></script>
+</body>
+</html>
