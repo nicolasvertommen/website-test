@@ -261,6 +261,71 @@
     </div>
   </footer>
 
+  <!-- PARTNER MODAL -->
+  <div class="modal-overlay" id="partnerModal">
+    <div class="modal modal-partner">
+      <div class="modal-header">
+        <div>
+          <h3>Word partner</h3>
+          <p class="modal-subtitle">Ontvang een gratis Nero laadstation in jouw zaak.</p>
+        </div>
+        <button class="modal-close" data-close-modal aria-label="Close">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="partner-form" id="partnerForm">
+          <div class="form-group">
+            <label for="venueName">Naam locatie</label>
+            <input type="text" id="venueName" name="venueName" placeholder="bv. Het Grand Caf&eacute;" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contactPerson">Contactpersoon</label>
+              <input type="text" id="contactPerson" name="contactPerson" placeholder="Volledige naam" required>
+            </div>
+            <div class="form-group">
+              <label for="contactPhone">Telefoonnummer <span style="font-weight:400;color:var(--gray-500)">(optioneel)</span></label>
+              <input type="tel" id="contactPhone" name="contactPhone" placeholder="+32 ...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Email</label>
+            <input type="email" id="contactEmail" name="contactEmail" placeholder="you@venue.com" required>
+          </div>
+          <div class="form-group">
+            <label for="venueLocation">Locatie / Stad <span style="font-weight:400;color:var(--gray-500)">(optioneel)</span></label>
+            <input type="text" id="venueLocation" name="venueLocation" placeholder="bv. Brussel, België">
+          </div>
+          <div class="form-group">
+            <label for="venueType">Type locatie</label>
+            <select id="venueType" name="venueType" required>
+              <option value="" disabled selected>Selecteer type...</option>
+              <option value="bar">Bar / Restaurant</option>
+              <option value="club">Nachtclub</option>
+              <option value="festival">Festival / Evenement</option>
+              <option value="hotel">Hotel / Hostel</option>
+              <option value="coworking">Coworking / Kantoor</option>
+              <option value="retail">Winkel / Retail</option>
+              <option value="other">Andere</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-full">
+            Aanvraag indienen
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+        <div class="form-success" id="formSuccess" style="display:none;">
+          <div class="success-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" fill="rgba(0,232,123,0.1)"/><path d="M16 24l6 6 10-12" stroke="#00e87b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Aanvraag ontvangen!</h3>
+          <p>Bedankt voor je interesse. Ons partnershipsteam neemt binnen 24 uur contact met je op.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="../script.js" defer></script>
   <script src="../chat-widget.js" defer></script>
 </body>
