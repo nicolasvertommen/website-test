@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nero CRM — Partnership Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green: #00e87b;
+            --cyan: #00c9ff;
+            --dark: #0a0e27;
+            --text: #1a1d2e;
+            --light: #f8f9fa;
+            --border: #e5e7eb;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --radius-sm: 10px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: white;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--green), var(--cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 10px 16px;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-primary {
+            background: var(--green);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #00d46b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 232, 123, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--light);
+            border-color: var(--text);
+        }
+
+        .btn-sm {
+            padding: 8px 12px;
+            font-size: 12px;
+        }
+
+        .btn-danger {
+            background: var(--danger);
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #dc2626;
+        }
+
+        .search-filter {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select {
+            padding: 10px 12px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        input[type="date"]:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--green);
+            box-shadow: 0 0 0 3px rgba(0, 232, 123, 0.1);
+        }
+
+        .search-filter input {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .contacts-grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            margin-bottom: 30px;
+        }
+
+        .contact-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            transition: all 0.2s;
+        }
+
+        .contact-card:hover {
+            border-color: var(--green);
+            box-shadow: 0 4px 12px rgba(0, 232, 123, 0.1);
+        }
+
+        .contact-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 12px;
+        }
+
+        .contact-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .contact-company {
+            font-size: 13px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .status-new {
+            background: #dbeafe;
+            color: #0c4a6e;
+        }
+
+        .status-contacted {
+            background: #fef3c7;
+            color: #78350f;
+        }
+
+        .status-interested {
+            background: #dcfce7;
+            color: #15803d;
+        }
+
+        .status-negotiating {
+            background: #fce7f3;
+            color: #831843;
+        }
+
+        .status-partner {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .contact-details {
+            font-size: 13px;
+            color: #666;
+            margin: 12px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 12px 0;
+        }
+
+        .detail-line {
+            margin: 6px 0;
+            display: flex;
+            gap: 8px;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            min-width: 60px;
+        }
+
+        .contact-notes {
+            font-size: 13px;
+            color: #666;
+            background: var(--light);
+            padding: 10px;
+            border-radius: var(--radius-sm);
+            margin: 12px 0;
+            min-height: 40px;
+        }
+
+        .contact-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .contact-actions button {
+            flex: 1;
+            padding: 8px 10px;
+            font-size: 12px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.open {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #999;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 13px;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            color: #999;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .form-row .form-group {
+            margin-bottom: 12px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--green);
+            box-shadow: 0 0 0 3px rgba(0, 232, 123, 0.1);
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 24px;
+        }
+
+        .modal-actions button {
+            flex: 1;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+        }
+
+        .empty-state svg {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 16px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--green), var(--cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #999;
+            margin-top: 4px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .reminder-badge {
+            display: inline-block;
+            background: var(--danger);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-top: 6px;
+        }
+
+        @media (max-width: 768px) {
+            .contacts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div>
+                    <h1>🚀 Nero CRM</h1>
+                    <p style="font-size: 13px; color: #999; margin-top: 4px;">Partnership Management & Outreach</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-primary" onclick="openAddContactModal()">+ Add Contact</button>
+                    <button class="btn-secondary btn-sm" onclick="exportCSV()">📥 Export CSV</button>
+                    <label style="cursor: pointer;">
+                        <button class="btn-secondary btn-sm">📤 Import CSV</button>
+                        <input type="file" accept=".csv" onchange="importCSV(event)">
+                    </label>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="stats" id="stats"></div>
+
+        <div class="search-filter">
+            <input type="text" id="searchInput" placeholder="Search contacts..." onkeyup="filterContacts()">
+            <select id="statusFilter" onchange="filterContacts()">
+                <option value="">All Statuses</option>
+                <option value="New">New</option>
+                <option value="Contacted">Contacted</option>
+                <option value="Interested">Interested</option>
+                <option value="Negotiating">Negotiating</option>
+                <option value="Partner">Partner</option>
+            </select>
+        </div>
+
+        <div class="contacts-grid" id="contactsGrid"></div>
+
+        <div id="emptyState" class="empty-state" style="display: none;">
+            <p style="font-size: 16px; margin-bottom: 8px;">No contacts yet</p>
+            <p style="font-size: 13px;">Add your first contact to get started</p>
+        </div>
+    </main>
+
+    <!-- Add/Edit Contact Modal -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span id="modalTitle">Add Contact</span>
+                <button class="modal-close" onclick="closeModal('contactModal')">&times;</button>
+            </div>
+            <form id="contactForm" onsubmit="saveContact(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>First Name *</label>
+                        <input type="text" id="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name *</label>
+                        <input type="text" id="lastName" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Venue Name *</label>
+                    <input type="text" id="venueName" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="tel" id="phone">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Status *</label>
+                        <select id="status" required>
+                            <option value="New">New</option>
+                            <option value="Contacted">Contacted</option>
+                            <option value="Interested">Interested</option>
+                            <option value="Negotiating">Negotiating</option>
+                            <option value="Partner">Partner</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Follow-up Date</label>
+                        <input type="date" id="followUpDate">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Venue Type</label>
+                    <select id="venueType">
+                        <option value="">Select...</option>
+                        <option value="Bar/Café">Bar/Café</option>
+                        <option value="Restaurant">Restaurant</option>
+                        <option value="Gym/Fitness">Gym/Fitness</option>
+                        <option value="Hotel">Hotel</option>
+                        <option value="Shopping Mall">Shopping Mall</option>
+                        <option value="Airport">Airport</option>
+                        <option value="Train Station">Train Station</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Notes</label>
+                    <textarea id="notes" placeholder="Add any notes about this contact..."></textarea>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="closeModal('contactModal')">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Contact</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let contacts = [];
+        let currentEditId = null;
+
+        // Initialize
+        function init() {
+            loadContacts();
+            renderContacts();
+            updateStats();
+        }
+
+        function loadContacts() {
+            const stored = localStorage.getItem('nero_crm_contacts');
+            contacts = stored ? JSON.parse(stored) : [];
+        }
+
+        function saveContactsToStorage() {
+            localStorage.setItem('nero_crm_contacts', JSON.stringify(contacts));
+        }
+
+        function openAddContactModal() {
+            currentEditId = null;
+            document.getElementById('modalTitle').textContent = 'Add Contact';
+            document.getElementById('contactForm').reset();
+            document.getElementById('contactModal').classList.add('open');
+        }
+
+        function openEditContactModal(id) {
+            const contact = contacts.find(c => c.id === id);
+            if (!contact) return;
+
+            currentEditId = id;
+            document.getElementById('modalTitle').textContent = 'Edit Contact';
+            document.getElementById('firstName').value = contact.firstName;
+            document.getElementById('lastName').value = contact.lastName;
+            document.getElementById('venueName').value = contact.venueName;
+            document.getElementById('email').value = contact.email;
+            document.getElementById('phone').value = contact.phone || '';
+            document.getElementById('status').value = contact.status;
+            document.getElementById('followUpDate').value = contact.followUpDate || '';
+            document.getElementById('venueType').value = contact.venueType || '';
+            document.getElementById('notes').value = contact.notes || '';
+
+            document.getElementById('contactModal').classList.add('open');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('open');
+        }
+
+        function saveContact(event) {
+            event.preventDefault();
+
+            const contact = {
+                id: currentEditId || Date.now(),
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                venueName: document.getElementById('venueName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                status: document.getElementById('status').value,
+                followUpDate: document.getElementById('followUpDate').value,
+                venueType: document.getElementById('venueType').value,
+                notes: document.getElementById('notes').value,
+                createdAt: currentEditId ? (contacts.find(c => c.id === currentEditId)?.createdAt || new Date().toISOString()) : new Date().toISOString()
+            };
+
+            if (currentEditId) {
+                const idx = contacts.findIndex(c => c.id === currentEditId);
+                if (idx >= 0) contacts[idx] = contact;
+            } else {
+                contacts.push(contact);
+            }
+
+            saveContactsToStorage();
+            renderContacts();
+            updateStats();
+            closeModal('contactModal');
+        }
+
+        function deleteContact(id) {
+            if (confirm('Are you sure? This cannot be undone.')) {
+                contacts = contacts.filter(c => c.id !== id);
+                saveContactsToStorage();
+                renderContacts();
+                updateStats();
+            }
+        }
+
+        function updateStatus(id, newStatus) {
+            const contact = contacts.find(c => c.id === id);
+            if (contact) {
+                contact.status = newStatus;
+                saveContactsToStorage();
+                renderContacts();
+                updateStats();
+            }
+        }
+
+        function renderContacts() {
+            const grid = document.getElementById('contactsGrid');
+            const empty = document.getElementById('emptyState');
+
+            if (contacts.length === 0) {
+                grid.innerHTML = '';
+                empty.style.display = 'block';
+                return;
+            }
+
+            empty.style.display = 'none';
+            grid.innerHTML = contacts.map(c => `
+                <div class="contact-card">
+                    <div class="contact-header">
+                        <div>
+                            <div class="contact-name">${c.firstName} ${c.lastName}</div>
+                            <div class="contact-company">${c.venueName}</div>
+                        </div>
+                        <div class="status-badge status-${c.status.toLowerCase().replace(/\s+/g, '-')}">${c.status}</div>
+                    </div>
+
+                    <div class="contact-details">
+                        <div class="detail-line">
+                            <span class="detail-label">📧</span>
+                            <a href="mailto:${c.email}" style="color: var(--green); text-decoration: none;">${c.email}</a>
+                        </div>
+                        ${c.phone ? `<div class="detail-line">
+                            <span class="detail-label">📱</span>
+                            <a href="tel:${c.phone}" style="color: var(--green); text-decoration: none;">${c.phone}</a>
+                        </div>` : ''}
+                        ${c.venueType ? `<div class="detail-line">
+                            <span class="detail-label">🏢</span>
+                            <span>${c.venueType}</span>
+                        </div>` : ''}
+                        ${c.followUpDate ? `<div class="detail-line">
+                            <span class="detail-label">📅</span>
+                            <span>${new Date(c.followUpDate).toLocaleDateString('nl-BE')}</span>
+                            ${isOverdue(c.followUpDate) ? '<span class="reminder-badge">OVERDUE</span>' : ''}
+                        </div>` : ''}
+                    </div>
+
+                    ${c.notes ? `<div class="contact-notes">${c.notes}</div>` : ''}
+
+                    <div class="contact-actions">
+                        <button class="btn-secondary btn-sm" onclick="openEditContactModal(${c.id})">✏️ Edit</button>
+                        <select class="btn-secondary btn-sm" onchange="updateStatus(${c.id}, this.value)" style="padding: 8px 8px;">
+                            <option value="">Change Status</option>
+                            <option value="New">→ New</option>
+                            <option value="Contacted">→ Contacted</option>
+                            <option value="Interested">→ Interested</option>
+                            <option value="Negotiating">→ Negotiating</option>
+                            <option value="Partner">→ Partner</option>
+                        </select>
+                        <button class="btn-danger btn-sm" onclick="deleteContact(${c.id})">🗑️</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterContacts() {
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            const status = document.getElementById('statusFilter').value;
+
+            const filtered = contacts.filter(c => {
+                const matchesSearch =
+                    c.firstName.toLowerCase().includes(search) ||
+                    c.lastName.toLowerCase().includes(search) ||
+                    c.venueName.toLowerCase().includes(search) ||
+                    c.email.toLowerCase().includes(search);
+
+                const matchesStatus = !status || c.status === status;
+
+                return matchesSearch && matchesStatus;
+            });
+
+            const grid = document.getElementById('contactsGrid');
+            if (filtered.length === 0) {
+                grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: #999;">No contacts found</div>';
+                return;
+            }
+
+            grid.innerHTML = contacts.filter(c => {
+                const matchesSearch =
+                    c.firstName.toLowerCase().includes(search) ||
+                    c.lastName.toLowerCase().includes(search) ||
+                    c.venueName.toLowerCase().includes(search) ||
+                    c.email.toLowerCase().includes(search);
+
+                const matchesStatus = !status || c.status === status;
+
+                return matchesSearch && matchesStatus;
+            }).map(c => `
+                <div class="contact-card">
+                    <div class="contact-header">
+                        <div>
+                            <div class="contact-name">${c.firstName} ${c.lastName}</div>
+                            <div class="contact-company">${c.venueName}</div>
+                        </div>
+                        <div class="status-badge status-${c.status.toLowerCase().replace(/\s+/g, '-')}">${c.status}</div>
+                    </div>
+
+                    <div class="contact-details">
+                        <div class="detail-line">
+                            <span class="detail-label">📧</span>
+                            <a href="mailto:${c.email}" style="color: var(--green); text-decoration: none;">${c.email}</a>
+                        </div>
+                        ${c.phone ? `<div class="detail-line">
+                            <span class="detail-label">📱</span>
+                            <a href="tel:${c.phone}" style="color: var(--green); text-decoration: none;">${c.phone}</a>
+                        </div>` : ''}
+                        ${c.venueType ? `<div class="detail-line">
+                            <span class="detail-label">🏢</span>
+                            <span>${c.venueType}</span>
+                        </div>` : ''}
+                        ${c.followUpDate ? `<div class="detail-line">
+                            <span class="detail-label">📅</span>
+                            <span>${new Date(c.followUpDate).toLocaleDateString('nl-BE')}</span>
+                            ${isOverdue(c.followUpDate) ? '<span class="reminder-badge">OVERDUE</span>' : ''}
+                        </div>` : ''}
+                    </div>
+
+                    ${c.notes ? `<div class="contact-notes">${c.notes}</div>` : ''}
+
+                    <div class="contact-actions">
+                        <button class="btn-secondary btn-sm" onclick="openEditContactModal(${c.id})">✏️ Edit</button>
+                        <select class="btn-secondary btn-sm" onchange="updateStatus(${c.id}, this.value)" style="padding: 8px 8px;">
+                            <option value="">Change Status</option>
+                            <option value="New">→ New</option>
+                            <option value="Contacted">→ Contacted</option>
+                            <option value="Interested">→ Interested</option>
+                            <option value="Negotiating">→ Negotiating</option>
+                            <option value="Partner">→ Partner</option>
+                        </select>
+                        <button class="btn-danger btn-sm" onclick="deleteContact(${c.id})">🗑️</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updateStats() {
+            const stats = {
+                total: contacts.length,
+                new: contacts.filter(c => c.status === 'New').length,
+                interested: contacts.filter(c => c.status === 'Interested').length,
+                partners: contacts.filter(c => c.status === 'Partner').length,
+                overdue: contacts.filter(c => c.followUpDate && isOverdue(c.followUpDate)).length
+            };
+
+            document.getElementById('stats').innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-value">${stats.total}</div>
+                    <div class="stat-label">Total Contacts</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${stats.new}</div>
+                    <div class="stat-label">New Leads</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${stats.interested}</div>
+                    <div class="stat-label">Interested</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${stats.partners}</div>
+                    <div class="stat-label">Partners</div>
+                </div>
+                ${stats.overdue > 0 ? `<div class="stat-card">
+                    <div class="stat-value" style="color: var(--danger);">${stats.overdue}</div>
+                    <div class="stat-label">Overdue Follow-ups</div>
+                </div>` : ''}
+            `;
+        }
+
+        function isOverdue(date) {
+            if (!date) return false;
+            return new Date(date) < new Date();
+        }
+
+        function exportCSV() {
+            if (contacts.length === 0) {
+                alert('No contacts to export');
+                return;
+            }
+
+            const headers = ['First Name', 'Last Name', 'Venue Name', 'Email', 'Phone', 'Status', 'Venue Type', 'Follow-up Date', 'Notes'];
+            const rows = contacts.map(c => [
+                c.firstName,
+                c.lastName,
+                c.venueName,
+                c.email,
+                c.phone || '',
+                c.status,
+                c.venueType || '',
+                c.followUpDate || '',
+                c.notes || ''
+            ]);
+
+            let csv = headers.join(',') + '\n';
+            rows.forEach(row => {
+                csv += row.map(cell => `"${cell.replace(/"/g, '""')}"`).join(',') + '\n';
+            });
+
+            const link = document.createElement('a');
+            link.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
+            link.download = `nero_crm_export_${new Date().toISOString().slice(0, 10)}.csv`;
+            link.click();
+        }
+
+        function importCSV(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const csv = e.target.result;
+                const lines = csv.split('\n');
+                const headers = lines[0].split(',').map(h => h.trim().replace(/^"(.+)"$/, '$1'));
+
+                let importedCount = 0;
+                for (let i = 1; i < lines.length; i++) {
+                    if (!lines[i].trim()) continue;
+
+                    const values = lines[i].match(/(".*?"|[^,]+)/g) || [];
+                    const row = values.map(v => v.trim().replace(/^"(.+)"$/, '$1'));
+
+                    if (row.length < 4) continue; // Skip invalid rows
+
+                    const contact = {
+                        id: Date.now() + i,
+                        firstName: row[0] || '',
+                        lastName: row[1] || '',
+                        venueName: row[2] || '',
+                        email: row[3] || '',
+                        phone: row[4] || '',
+                        status: row[5] || 'New',
+                        venueType: row[6] || '',
+                        followUpDate: row[7] || '',
+                        notes: row[8] || '',
+                        createdAt: new Date().toISOString()
+                    };
+
+                    if (contact.firstName && contact.venueName && contact.email) {
+                        contacts.push(contact);
+                        importedCount++;
+                    }
+                }
+
+                if (importedCount > 0) {
+                    saveContactsToStorage();
+                    renderContacts();
+                    updateStats();
+                    alert(`Successfully imported ${importedCount} contacts`);
+                } else {
+                    alert('No valid contacts found in CSV');
+                }
+
+                event.target.value = '';
+            };
+            reader.readAsText(file);
+        }
+
+        // Close modal on overlay click
+        document.getElementById('contactModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal('contactModal');
+            }
+        });
+
+        // Initialize on load
+        init();
+    </script>
+</body>
+</html>
