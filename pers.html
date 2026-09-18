@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pers & Media — Nero Charge</title>
+  <meta name="description" content="Lees wat media over Nero Charge schrijven. Artikelen en features over ons powerbank rental platform.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" href="images/logo.png.png">
+  <link rel="apple-touch-icon" href="images/logo.png.png">
+  <style>
+    .pers-page {
+      padding: 160px 24px 100px;
+      background: var(--gray-50, #f8f9fa);
+      min-height: 100vh;
+    }
+    .pers-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .pers-header {
+      margin-bottom: 60px;
+      text-align: center;
+    }
+    .pers-header h1 {
+      font-size: 2.4rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: var(--gray-900, #111);
+      margin-bottom: 16px;
+    }
+    .pers-header p {
+      font-size: 1.1rem;
+      color: var(--gray-600, #555);
+      line-height: 1.6;
+    }
+    .pers-articles {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .pers-article {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      border: 1px solid rgba(0,0,0,0.04);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .pers-article:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .pers-source {
+      display: inline-block;
+      background: linear-gradient(135deg, rgba(0,232,123,0.1), rgba(0,201,255,0.1));
+      color: var(--green);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 12px;
+    }
+    .pers-article h2 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--gray-900, #111);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .pers-article p {
+      font-size: 0.95rem;
+      color: var(--gray-600, #555);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .pers-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--green);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: gap 0.2s;
+    }
+    .pers-link:hover {
+      gap: 12px;
+    }
+    .pers-link:hover svg {
+      transform: translateX(2px);
+    }
+    .pers-link svg {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.2s;
+    }
+    .pers-empty {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--gray-500);
+    }
+    .pers-empty p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gray-500);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      margin-bottom: 40px;
+      transition: color 0.2s;
+    }
+    .back-link:hover {
+      color: var(--green);
+    }
+    @media (max-width: 768px) {
+      .pers-page {
+        padding: 120px 16px 80px;
+      }
+      .pers-inner {
+        padding: 0;
+      }
+      .pers-article {
+        padding: 28px 20px;
+      }
+      .pers-header h1 {
+        font-size: 1.8rem;
+      }
+      .pers-article h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-inner container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png.png" alt="Nero Charge logo" class="logo-img">
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html#how-it-works">Hoe het werkt</a>
+        <a href="index.html#product">Product</a>
+        <a href="index.html#benefits">Voordelen</a>
+        <a href="index.html#testimonials">Klanten</a>
+        <a href="index.html#faq">FAQ</a>
+      </div>
+      <div class="nav-actions">
+        <a href="partner.html" class="btn btn-primary btn-sm">Word partner</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PERS PAGE -->
+  <main class="pers-page">
+    <div class="pers-inner">
+
+      <a href="index.html" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Terug naar home
+      </a>
+
+      <div class="pers-header">
+        <h1>Pers & Media</h1>
+        <p>Lees wat er over Nero Charge wordt geschreven. Artikelen en features van media partners.</p>
+      </div>
+
+      <div class="pers-articles">
+
+        <!-- Article 1 -->
+        <article class="pers-article">
+          <span class="pers-source">Hungry Antwerp</span>
+          <h2>Why More Hospitality Businesses Are Choosing Nero Charge</h2>
+          <p>Een diepgaand artikel over hoe horeca-ondernemers kiezen voor Nero Charge als oplossing om hun gasten tevreden te houden. Lees hoe het platform werkt en wat de voordelen zijn voor bars, restaurants en strandclubs.</p>
+          <a href="https://www.hungryantwerp.be/blog/why-more-hospitality-businesses-are-choosing-nero-charge" target="_blank" rel="noopener" class="pers-link">
+            Lees artikel
+            <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </article>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="footer-logo">
+            <img src="images/logo.png.png" alt="Nero Charge logo">
+          </a>
+          <p class="footer-desc">Huur een powerbank overal in België. Geen app nodig, contactloos betalen.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="index.html#how-it-works">Hoe het werkt</a></li>
+            <li><a href="index.html#product">Features</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Bedrijf</h4>
+          <ul>
+            <li><a href="partner.html">Word partner</a></li>
+            <li><a href="pers.html">Pers & Media</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Juridisch</h4>
+          <ul>
+            <li><a href="privacybeleid.html">Privacybeleid</a></li>
+            <li><a href="algemene-voorwaarden.html">Algemene voorwaarden</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Nero Charge. Alle rechten voorbehouden.</p>
+        <div class="footer-links">
+          <a href="tel:+32468060276">+32 468 06 02 76</a>
+          <a href="mailto:nerocharge@outlook.com">nerocharge@outlook.com</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+  <script src="chat-widget.js" defer></script>
+</body>
+</html>
