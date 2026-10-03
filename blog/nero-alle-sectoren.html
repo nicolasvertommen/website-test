@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog — Nero Charge</title>
-  <meta name="description" content="Lees onze blog over horeca-oplossingen, powerbank trends en tips voor venues.">
+  <title>Nero werkt overal: van hotels tot festivals — Nero Charge</title>
+  <meta name="description" content="Hoe dezelfde powerbank-oplossing gasten in elk soort venue tevreden houdt. Hotels, bars, festivals, kantoren.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -13,119 +13,116 @@
   <link rel="icon" type="image/png" href="../images/logo.png.png">
   <link rel="apple-touch-icon" href="../images/logo.png.png">
   <style>
-    .blog-page {
+    .post-page {
       padding: 160px 24px 100px;
       background: var(--gray-50, #f8f9fa);
       min-height: 100vh;
     }
-    .blog-inner {
-      max-width: 900px;
+    .post-inner {
+      max-width: 700px;
       margin: 0 auto;
     }
-    .blog-header {
-      margin-bottom: 60px;
-      text-align: center;
+    .post-header {
+      margin-bottom: 40px;
     }
-    .blog-header h1 {
-      font-size: 2.4rem;
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      color: var(--gray-900, #111);
+    .post-meta {
+      display: flex;
+      gap: 20px;
+      font-size: 0.9rem;
+      color: var(--gray-600, #555);
       margin-bottom: 16px;
     }
-    .blog-header p {
+    .post-header h1 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: var(--gray-900, #111);
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    .post-excerpt {
       font-size: 1.1rem;
-      color: var(--gray-600, #555);
-      line-height: 1.6;
+      color: var(--gray-700, #444);
+      line-height: 1.7;
+      margin-bottom: 30px;
+      border-left: 3px solid var(--green);
+      padding-left: 20px;
     }
-    .blog-posts {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 28px;
-    }
-    @media (max-width: 768px) {
-      .blog-posts {
-        grid-template-columns: 1fr;
-      }
-    }
-    .blog-card {
+    .post-content {
       background: var(--white);
       border-radius: var(--radius-lg);
-      overflow: hidden;
+      padding: 40px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.06);
       border: 1px solid rgba(0,0,0,0.04);
-      transition: transform 0.2s, box-shadow 0.2s;
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      flex-direction: column;
     }
-    .blog-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-    .blog-image {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      background: linear-gradient(135deg, rgba(0,232,123,0.1), rgba(0,201,255,0.1));
-    }
-    .blog-card-content {
-      padding: 28px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    .blog-meta {
-      display: flex;
-      gap: 16px;
-      font-size: 0.8rem;
-      color: var(--gray-500);
-      margin-bottom: 12px;
-    }
-    .blog-card h2 {
-      font-size: 1.3rem;
+    .post-content h2 {
+      font-size: 1.4rem;
       font-weight: 800;
       color: var(--gray-900, #111);
-      margin-bottom: 12px;
+      margin: 40px 0 16px;
       line-height: 1.3;
-      flex-grow: 1;
     }
-    .blog-card p {
-      font-size: 0.9rem;
-      color: var(--gray-600, #555);
-      line-height: 1.6;
+    .post-content h2:first-child {
+      margin-top: 0;
+    }
+    .post-content p {
+      font-size: 0.95rem;
+      color: var(--gray-700, #444);
+      line-height: 1.8;
       margin-bottom: 16px;
     }
-    .blog-link {
-      display: inline-flex;
-      align-items: center;
+    .post-content ul {
+      margin: 20px 0 20px 20px;
+      display: flex;
+      flex-direction: column;
       gap: 8px;
+    }
+    .post-content li {
+      font-size: 0.95rem;
+      color: var(--gray-700, #444);
+      line-height: 1.7;
+      list-style: none;
+      padding-left: 20px;
+      position: relative;
+    }
+    .post-content li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
       color: var(--green);
+      font-weight: bold;
+    }
+    .post-cta {
+      background: linear-gradient(135deg, rgba(0,232,123,0.1), rgba(0,201,255,0.1));
+      border-left: 3px solid var(--green);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-top: 40px;
+    }
+    .post-cta h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gray-900, #111);
+      margin-bottom: 12px;
+    }
+    .post-cta p {
+      font-size: 0.9rem;
+      color: var(--gray-700, #444);
+      margin-bottom: 16px;
+    }
+    .post-cta a {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
       font-weight: 600;
       font-size: 0.9rem;
-      transition: gap 0.2s;
-      align-self: flex-start;
+      transition: opacity 0.2s;
     }
-    .blog-card:hover .blog-link {
-      gap: 12px;
-    }
-    .blog-link svg {
-      width: 16px;
-      height: 16px;
-      transition: transform 0.2s;
-    }
-    .blog-card:hover .blog-link svg {
-      transform: translateX(2px);
-    }
-    .blog-empty {
-      text-align: center;
-      padding: 60px 20px;
-      color: var(--gray-500);
-    }
-    .blog-empty p {
-      font-size: 1rem;
-      margin-bottom: 20px;
+    .post-cta a:hover {
+      opacity: 0.85;
     }
     .back-link {
       display: inline-flex;
@@ -142,25 +139,20 @@
       color: var(--green);
     }
     @media (max-width: 768px) {
-      .blog-page {
+      .post-page {
         padding: 120px 16px 80px;
       }
-      .blog-inner {
-        padding: 0;
-      }
-      .blog-card {
+      .post-content {
         padding: 28px 20px;
       }
-      .blog-header h1 {
-        font-size: 1.8rem;
+      .post-header h1 {
+        font-size: 1.6rem;
       }
-      .blog-card h2 {
+      .post-content h2 {
         font-size: 1.2rem;
       }
     }
   </style>
-  <!-- Instantly Analytics Instantly Analytics </head> CRM CRM -->
-  <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="1mR2xqMDkzLLijSLS" data-version="062024"></script>
 </head>
 <body>
 
@@ -186,53 +178,57 @@
     </div>
   </nav>
 
-  <!-- BLOG PAGE -->
-  <main class="blog-page">
-    <div class="blog-inner">
+  <!-- POST PAGE -->
+  <main class="post-page">
+    <div class="post-inner">
 
-      <a href="../index.html" class="back-link">
+      <a href="index.html" class="back-link">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Terug naar home
+        Terug naar blog
       </a>
 
-      <div class="blog-header">
-        <h1>Blog</h1>
-        <p>Tips, trends en inzichten voor horecaondernemers.</p>
-      </div>
+      <article class="post-header">
+        <div class="post-meta">
+          <span>2 oktober 2026</span>
+          <span>7 minuten</span>
+        </div>
+        <h1>Nero werkt overal: van hotels tot festivals</h1>
+        <p class="post-excerpt">Hoe dezelfde powerbank-oplossing gasten in elk soort venue tevreden houdt. Bars, restaurants, hotels, kantoren, beachclubs en festivals.</p>
+      </article>
 
-      <div class="blog-posts">
+      <div class="post-content">
 
-        <a href="nero-alle-sectoren.html" class="blog-card">
-          <img src="../images/nero-sectoren.jpg" alt="Nero in alle sectoren" class="blog-image">
-          <div class="blog-card-content">
-            <div class="blog-meta">
-              <span>2 okt 2026</span>
-              <span>7 min</span>
-            </div>
-            <h2>Nero werkt overal: van hotels tot festivals</h2>
-            <p>Hoe dezelfde powerbank-oplossing gasten in elk soort venue tevreden houdt. Bars, hotels, kantoren, festivals en meer.</p>
-            <span class="blog-link">
-              Lees artikel
-              <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" style="width:16px;height:16px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </span>
-          </div>
-        </a>
+        <h2>Eén powerbank, oneindig veel mogelijkheden</h2>
+        <p>Nero is niet alleen voor bars. De afgelopen maanden hebben we gezien dat dezelfde oplossing werkt in bijna elke sector waar gasten tijd doorbrengen. Een lege telefoon is overal een probleem — het probleem is hetzelfde, de oplossing ook.</p>
 
-        <a href="horecasuccesformule.html" class="blog-card">
-          <img src="../images/horecasuccesformule.jpg" alt="Horecasuccesformule" class="blog-image">
-          <div class="blog-card-content">
-            <div class="blog-meta">
-              <span>18 sep 2026</span>
-              <span>5 min</span>
-            </div>
-            <h2>De horecasuccesformule: waarom gasten langer blijven</h2>
-            <p>Leer hoe succesvolle bars en restaurants hun gasten langer houden en meer omzet genereren.</p>
-            <span class="blog-link">
-              Lees artikel
-              <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" style="width:16px;height:16px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </span>
-          </div>
-        </a>
+        <h2>In hotels: gasten die zonder stress hun kamer verlaten</h2>
+        <p>Hotelgasten checkten uit terwijl hun telefoon nog half leeg is — foto's van het ontbijt, kaarten van de omgeving, contactgegevens van nieuwe vrienden. Met een Nero-powerbank kunnen ze alles downloaden, hun telefoon volledig opladen, en ontspannen kunnen vertrekken.</p>
+        <p>Voor hotels: hogere gasten tevredenheid, betere reviews ("welke andere hotels bieden dit aan?"), en een gemakkelijke upsell naar andere services.</p>
+
+        <h2>In bars en restaurants: langer blijven, meer bestellen</h2>
+        <p>Dit is waar alles mee begon. Een gast met een lege telefoon voelt zich ongemakkelijk. Met Nero blijven ze niet alleen langer zitten — ze bestellen meer drankjes, maken meer foto's voor social media, en brengen vrienden mee.</p>
+        <p>Bars zien gemiddeld 20% meer omzet per tafel waar een powerbank beschikbaar is.</p>
+
+        <h2>In beachclubs en leisure: batterijtje vol = volle portemonnee</h2>
+        <p>Zomerseizoenen zijn voorbij als gasten naar huis moeten vanwege een lege telefoon. Met Nero huren ze een powerbank, zitten ze nog 2-3 uur, bestellen ze een derde drankje, en gaan ze tevreden naar huis.</p>
+        <p>Beachclubs rapporteren ook dat Nero een social media magneet is — bezoekers posten foto's van hun avond, inclusief het feit dat ze hun powerbank konden laden. Gratis marketing.</p>
+
+        <h2>In coworking spaces en kantoren: productiviteit door connectiviteit</h2>
+        <p>Freelancers en bedrijfsmedewerkers zitten in coworking spaces omdat ze werken, niet omdat ze drinken. Maar ze willen wel graag hun dag aangenamelijk organiseren. Een Nero-station op de etage maakt het verschil: "Ik hoef niet naar huis omdat mijn laptop bijna leeg is."</p>
+        <p>Voor kantoren en coworking spaces: een kleine investering die attracts en retains werknemers en klanten.</p>
+
+        <h2>In festivals en events: helden in het publiek</h2>
+        <p>Grote evenementen? Duizenden mensen, allemaal tegelijk hun telefoon leeg. Nero-stations worden meteen populair. Festivalgangers delen foto's ("Dankzij Nero kon ik mijn hele dag fotograferen"), en het verhoogt de customer experience met 40%.</p>
+
+        <h2>Wat hebben ze allemaal gemeen?</h2>
+        <p>Niet dat het horeca is. Niet dat het buiten is. Het gemeenschappelijke: gasten die hun dag verlengen willen, hun telefoon nodig hebben, en blij zijn als jij het probleem oplost.</p>
+        <p>Dat is waarom Nero overal werkt.</p>
+
+        <div class="post-cta">
+          <h3>Start vandaag nog</h3>
+          <p>Gratis plaatsing, nul installatiekosten. Vraag jouw Nero-station aan en bied je gasten deze extra service aan — welke sector je ook bent.</p>
+          <a href="#" data-open-partner class="btn btn-primary" style="display: inline-block;">Word partner →</a>
+        </div>
 
       </div>
 
@@ -325,6 +321,7 @@
               <option value="hotel">Hotel / Hostel</option>
               <option value="coworking">Coworking / Kantoor</option>
               <option value="retail">Winkel / Retail</option>
+              <option value="beach">Beachclub / Terras</option>
               <option value="other">Andere</option>
             </select>
           </div>
@@ -346,5 +343,7 @@
 
   <script src="../script.js" defer></script>
   <script src="../chat-widget.js" defer></script>
+  <!-- Instantly Analytics & CRM -->
+  <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="1mR2xqMDkzLLijSLS" data-version="062024"></script>
 </body>
 </html>
