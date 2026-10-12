@@ -348,6 +348,11 @@ document.addEventListener('DOMContentLoaded', () => {
     { id: 'barduport',       name: 'Bar Du Port',        lat: 51.2302109, lng: 4.4107686, address: 'Napoleonkaai 53, 2000 Antwerpen' },
     { id: 'barbossa',        name: 'Barbossa',           lat: 51.2129986, lng: 4.4052336, address: 'Sint-Jorispoort 1, 2000 Antwerpen' },
     { id: 'brunellos',       name: "Brunello's",         lat: 51.3514, lng: 3.2839, address: 'Rubensplein, Albertstrand, 8300 Knokke-Heist' },
+    { id: 'boeckenberg',     name: 'Boeckenberg sportcentrum', lat: 51.1956272, lng: 4.4711031, address: 'Grensstraat 9, 2100 Antwerpen' },
+    { id: 'put19',           name: 'Put 19',             lat: 51.3522783, lng: 3.3046392, address: 'Sparrendreef 74, 8300 Knokke-Heist' },
+    { id: 'radisson',        name: 'Radisson Blu Brugge', lat: 51.1954130, lng: 3.2205573, address: 'Frank Van Ackerpromenade 17, 8000 Brugge' },
+    { id: 'revista',         name: 'Revista',            lat: 51.2095779, lng: 4.3948830, address: 'Karel Rogierstraat 47, 2000 Antwerpen' },
+    { id: 'bowlingstones',   name: 'Bowlingstones Wemmel', lat: 50.8953350, lng: 4.3106674, address: 'Steenweg op Brussel 397, 1780 Wemmel' },
   ];
 
   let leafletMap = null;
