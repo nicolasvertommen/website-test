@@ -358,7 +358,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { id: 'leienpaleis',     name: 'Leienpaleis',         lat: 51.2119321, lng: 4.4095532, address: 'Maria-Henriëttalei 1, 2018 Antwerpen' },
     { id: 'zerolatency',     name: 'Zero Latency Antwerpen', lat: 51.2129624, lng: 4.3932639, address: 'Riemstraat 45, 2000 Antwerpen' },
     { id: 'astay',           name: 'A-Stay Hotel',        lat: 51.2143976, lng: 4.4199974, address: 'Pelikaanstraat 86, 2018 Antwerpen' },
-    { id: 'meahotel',        name: 'Mea Hotel',           lat: 51.2083763, lng: 4.4371008, address: 'Plantin en Moretuslei 138, 2018 Antwerpen' },
+    { id: 'meahotel',        name: 'MEA Restaurant Antwerp', lat: 51.2083763, lng: 4.4371008, address: 'Plantin en Moretuslei 138, 2018 Antwerpen' },
     { id: 'theater',         name: 'Theater Elckerlyck',  lat: 51.2142602, lng: 4.4129967, address: 'Frankrijklei 85/87, 2000 Antwerpen' },
     { id: 'littlethai',      name: 'Little Thai By Sanito', lat: 51.2051699, lng: 4.3884462, address: 'Bolivarplaats 2, 2000 Antwerpen' },
     { id: 'denecho',         name: 'Den Echo',            lat: 51.2210407, lng: 4.4007469, address: 'Grote Markt 42, 2000 Antwerpen' },
