@@ -353,6 +353,15 @@ document.addEventListener('DOMContentLoaded', () => {
     { id: 'radisson',        name: 'Radisson Blu Brugge', lat: 51.1954130, lng: 3.2205573, address: 'Frank Van Ackerpromenade 17, 8000 Brugge' },
     { id: 'revista',         name: 'Revista',            lat: 51.2095779, lng: 4.3948830, address: 'Karel Rogierstraat 47, 2000 Antwerpen' },
     { id: 'bowlingstones',   name: 'Bowlingstones Wemmel', lat: 50.8953350, lng: 4.3106674, address: 'Steenweg op Brussel 397, 1780 Wemmel' },
+    { id: 'elcitadel',       name: 'El Citadel',          lat: 51.1893155, lng: 4.4867068, address: 'Verlengde Schanslaan, 2150 Antwerpen' },
+    { id: 'dentros',         name: 'Den Tros',            lat: 51.2302352, lng: 4.4108699, address: 'Napoleonkaai 55, 2000 Antwerpen' },
+    { id: 'leienpaleis',     name: 'Leienpaleis',         lat: 51.2119321, lng: 4.4095532, address: 'Maria-Henriëttalei 1, 2018 Antwerpen' },
+    { id: 'zerolatency',     name: 'Zero Latency Antwerpen', lat: 51.2129624, lng: 4.3932639, address: 'Riemstraat 45, 2000 Antwerpen' },
+    { id: 'astay',           name: 'A-Stay Hotel',        lat: 51.2143976, lng: 4.4199974, address: 'Pelikaanstraat 86, 2018 Antwerpen' },
+    { id: 'meahotel',        name: 'Mea Hotel',           lat: 51.2083763, lng: 4.4371008, address: 'Plantin en Moretuslei 138, 2018 Antwerpen' },
+    { id: 'theater',         name: 'Theater Elckerlyck',  lat: 51.2142602, lng: 4.4129967, address: 'Frankrijklei 85/87, 2000 Antwerpen' },
+    { id: 'littlethai',      name: 'Little Thai By Sanito', lat: 51.2051699, lng: 4.3884462, address: 'Bolivarplaats 2, 2000 Antwerpen' },
+    { id: 'denecho',         name: 'Den Echo',            lat: 51.2210407, lng: 4.4007469, address: 'Grote Markt 42, 2000 Antwerpen' },
   ];
 
   let leafletMap = null;
