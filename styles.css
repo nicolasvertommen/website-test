@@ -957,6 +957,73 @@ img {
   object-fit: contain;
 }
 
+.beyond-hospitality {
+  margin-bottom: 96px;
+}
+
+.beyond-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.beyond-card {
+  background: var(--gray-50);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.beyond-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.beyond-logo {
+  height: 88px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.beyond-logo img {
+  max-height: 88px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.beyond-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gray-600);
+  background: rgba(0,232,123,0.12);
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
+
+.beyond-card h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+@media (max-width: 1024px) {
+  .beyond-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .beyond-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
