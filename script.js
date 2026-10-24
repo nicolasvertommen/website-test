@@ -362,6 +362,14 @@ document.addEventListener('DOMContentLoaded', () => {
     { id: 'theater',         name: 'Theater Elckerlyck',  lat: 51.2142602, lng: 4.4129967, address: 'Frankrijklei 85/87, 2000 Antwerpen' },
     { id: 'littlethai',      name: 'Little Thai By Sanito', lat: 51.2051699, lng: 4.3884462, address: 'Bolivarplaats 2, 2000 Antwerpen' },
     { id: 'denecho',         name: 'Den Echo',            lat: 51.2210407, lng: 4.4007469, address: 'Grote Markt 42, 2000 Antwerpen' },
+    { id: 'vitrine',         name: 'Vitrine',             lat: 51.2101148, lng: 4.3969476, address: 'Marnixplaats 14, 2000 Antwerpen' },
+    { id: 'cafezurich',      name: 'Cafe Zurich',         lat: 51.2105633, lng: 4.3920171, address: 'Verlatstraat 2, 2000 Antwerpen' },
+    { id: 'shilling',        name: 'Brasserie Shilling',  lat: 51.2099834, lng: 4.3939946, address: 'Graaf van Egmontstraat 60, 2000 Antwerpen' },
+    { id: 'barbrut',         name: 'Bar Brut',            lat: 51.2314299, lng: 4.4097197, address: 'Catharina Pepijnstraat 3, 2000 Antwerpen' },
+    { id: 'cafedenengel',    name: 'Cafe den Engel',      lat: 51.2216691, lng: 4.3996378, address: 'Grote Markt 3, 2000 Antwerpen' },
+    { id: 'hofvanreyen',     name: 'Hof van Reyen',       lat: 51.1701382, lng: 4.4880291, address: 'Oudebaan 37–39 / Veldkant 14, 2530 Boechout' },
+    { id: 'ternesse',        name: 'Ternesse Golf',       lat: 51.2131385, lng: 4.5023951, address: 'Uilenbaan 15, 2160 Wommelgem' },
+    { id: 'zerolatencygent', name: 'Zero Latency VR Gent', lat: 51.0486936, lng: 3.7329953, address: 'Zuidstationstraat 11, 9000 Gent' },
   ];
 
   let leafletMap = null;
