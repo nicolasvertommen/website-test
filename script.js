@@ -370,6 +370,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { id: 'hofvanreyen',     name: 'Hof van Reyen',       lat: 51.1701382, lng: 4.4880291, address: 'Oudebaan 37–39 / Veldkant 14, 2530 Boechout' },
     { id: 'ternesse',        name: 'Ternesse Golf',       lat: 51.2131385, lng: 4.5023951, address: 'Uilenbaan 15, 2160 Wommelgem' },
     { id: 'zerolatencygent', name: 'Zero Latency VR Gent', lat: 51.0486936, lng: 3.7329953, address: 'Zuidstationstraat 11, 9000 Gent' },
+    { id: 'hobos',           name: "Hobo's Restaurant",   lat: 50.8757672, lng: 3.4458200, address: 'Wortegemseweg 51, 8790 Waregem' },
   ];
 
   let leafletMap = null;
