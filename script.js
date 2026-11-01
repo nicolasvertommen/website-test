@@ -371,6 +371,16 @@ document.addEventListener('DOMContentLoaded', () => {
     { id: 'ternesse',        name: 'Ternesse Golf',       lat: 51.2131385, lng: 4.5023951, address: 'Uilenbaan 15, 2160 Wommelgem' },
     { id: 'zerolatencygent', name: 'Zero Latency VR Gent', lat: 51.0486936, lng: 3.7329953, address: 'Zuidstationstraat 11, 9000 Gent' },
     { id: 'hobos',           name: "Hobo's Restaurant",   lat: 50.8757672, lng: 3.4458200, address: 'Wortegemseweg 51, 8790 Waregem' },
+    { id: 'horta',           name: 'Grand Café Horta',    lat: 51.2164296, lng: 4.4097790, address: 'Hopland 2, 2000 Antwerpen' },
+    { id: 'dragons',         name: 'Dragons Hockey',      lat: 51.2841721, lng: 4.4887745, address: 'Sportendreef 1, 2930 Brasschaat' },
+    { id: 'tchauffeureke',   name: "T'chauffeureke",      lat: 51.2183923, lng: 4.3958811, address: 'Sint-Jansvliet 4, 2000 Antwerpen' },
+    { id: 'athena',          name: 'Zaal Athena',         lat: 51.2205817, lng: 4.4183455, address: 'Franklin Rooseveltplaats 11, 2060 Antwerpen' },
+    { id: 'capital',         name: 'Club Capital',        lat: 51.2129730, lng: 4.4141662, address: 'Rubenslei 37, 2018 Antwerpen' },
+    { id: 'bonaparte',       name: 'Bonaparte',           lat: 51.2214534, lng: 4.4008222, address: 'Grote Markt 21, 2000 Antwerpen' },
+    { id: 'pixels',          name: 'Pixels on stage',     lat: 51.2077992, lng: 4.4739611, address: 'Corneel Franckstraat 25, 2100 Deurne' },
+    { id: 'fenikshof',       name: 'Fenikshof',           lat: 50.9344514, lng: 4.3694655, address: 'Abdijstraat 20, 1850 Grimbergen' },
+    { id: 'oosthoek',        name: 'Brasserie Den Oosthoek', lat: 51.3488215, lng: 3.3278493, address: 'Oosthoekplein 25, 8300 Knokke-Heist' },
+    { id: 'bowlingplanet',   name: 'Bowlingplanet',       lat: 51.3005472, lng: 4.4085373, address: 'Slijkweg 5, 2180 Antwerpen' },
   ];
 
   let leafletMap = null;
