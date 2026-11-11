@@ -1,19 +1,41 @@
 # Nero Charge
 
 ## Wat is Nero Charge?
-Nero Charge is een Belgisch bedrijf dat powerbanks verhuurt op gedeelde laadstations in horecagelegenheden, strandclubs en uitgaansgelegenheden. Klanten huren een powerbank contactloos via tap-to-pay (bankkaart of gsm), laden hun telefoon op, en brengen de powerbank terug bij hetzelfde station. Geen app nodig.
+Nero Charge is een Belgisch bedrijf dat powerbanks verhuurt via gedeelde Nero-laadstations. Gasten huren een powerbank contactloos (bankkaart of gsm via tap-to-pay), laden hun telefoon op en leveren de powerbank in bij eender welk Nero-station in het netwerk. Geen app nodig.
 
 ## Dienst
 - Powerbank verhuur (shared powerbank rental)
 - Contactloos betalen via bankkaart of smartphone (tap-to-pay)
 - USB-C en Lightning kabels ingebouwd in elke powerbank
+- Terugbrengen bij eender welk Nero-station in het netwerk
 - 10W laadvermogen
-- Beschikbaar in 30+ locaties in België
+- Beschikbaar in België
+
+## Stationmodellen
+- Indoor station met 24 slots: vrijstaand, voor binnenlocaties zoals hotellobby's, grote zalen en evenementen. Zie https://www.nerocharge.be/concertzaal.html
+- 8 slots met scherm: compact station voor drukbezochte bars en restaurants
+- 8 slots zonder scherm: compact station voor bars, toonbanken en kleinere ruimtes
+- Outdoor station met 24 slots: voor buitenlocaties zoals terrassen, festivals en evenementen. Zie https://www.nerocharge.be/festival.html
 
 ## Locaties
-Nero Charge is actief in:
-- **Antwerpen**: Berlin Antwerp (Kleine Markt 1), Tabanco (Scheldestraat 36), Cantine Antwerp (Scheldestraat 77), Bar Zorro (Hendrik Conscienceplein 5), Cordobar (Volkstraat 25), Fidele (Wapenstraat 18), Bar Du Port (Napoleonkaai 53), Barbossa (Sint-Jorispoort 1)
-- **Knokke-Heist**: Kiki Beach (Zeedijk-Duinbergen 387), Indi Beach (Zeedijk-Het Zoute 648), Knokke Strand (Zeedijk-Het Zoute 664), Yssis Beach (Zeedijk-Albertstrand 542), Lichttorenstrand (Zeedijk-Het Zoute 680), Brunello's Beach Club (Rubensplein, Albertstrand)
+Nero Charge is actief op de volgende locaties (lijst bevat niet alle actieve locaties):
+
+- **Antwerpen (stad)**: Berlin Antwerp (Kleine Markt 1), Tabanco (Scheldestraat 36), Cantine Antwerp (Scheldestraat 77), Bar Zorro (Hendrik Conscienceplein 5), Cordobar (Volkstraat 25), Fidele (Wapenstraat 18), Bar Du Port (Napoleonkaai 53), Barbossa (Sint-Jorispoort 1), Boeckenberg sportcentrum (Grensstraat 9), Revista (Karel Rogierstraat 47), Zero Latency VR Antwerpen (Riemstraat 45), A-Stay Hotel (Pelikaanstraat 86), Via Antwerp (Plantin en Moretuslei 136), Theater Elckerlyck (Frankrijklei 85/87), Little Thai By Sanito (Bolivarplaats 2), Den Echo (Grote Markt 42), Den Tros (Napoleonkaai 55), Leienpaleis (Maria-Henriëttalei 1), El Citadel (Verlengde Schanslaan), Vitrine (Marnixplaats 14), Cafe Zurich (Verlatstraat 2), Brasserie Shilling (Graaf van Egmontstraat 60), Bar Brut (Catharina Pepijnstraat 3), Cafe den Engel (Grote Markt 3), Grand Café Horta (Hopland 2), T'chauffeureke (Sint-Jansvliet 4), Zaal Athena (Franklin Rooseveltplaats 11), Club Capital (Rubenslei 37), Bonaparte (Grote Markt 21), Pixels on stage (Corneel Franckstraat 25, Deurne), Bowlingplanet (Slijkweg 5, Antwerpen)
+- **Antwerpen (omgeving)**: Hof van Reyen (Oudebaan 37–39, Boechout), Ternesse Golf (Uilenbaan 15, Wommelgem), Bowlingstones Wemmel (Steenweg op Brussel 397, Wemmel), Fenikshof (Abdijstraat 20, Grimbergen), Dragons Hockey (Sportendreef 1, Brasschaat)
+- **Knokke-Heist**: Kiki Beach (Zeedijk-Duinbergen 387), Indi Beach (Zeedijk-Het Zoute 648), Knokke Strand (Zeedijk-Het Zoute 664), Yssis Beach (Zeedijk-Albertstrand 542), Lichttorenstrand (Zeedijk-Het Zoute 680), Brunello's Beach Club (Rubensplein, Albertstrand), Put 19 (Sparrendreef 74), Brasserie Den Oosthoek (Oosthoekplein 25)
+- **Brugge**: Radisson Blu Brugge (Frank Van Ackerpromenade 17)
+- **Waregem**: Hobo's Restaurant (Wortegemseweg 51)
+- **Gent**: Zero Latency VR Gent (Zuidstationstraat 11)
+
+## Voor wie?
+- Horeca: cafés, bars, restaurants en hotels
+- Strandclubs en terrassen
+- Festivals, evenementen en beurzen
+- Concertzalen, theaters en andere grote binnenlocaties
+- Recreatie: bowling, VR-arena's, hockey en vrijetijdsvoorzieningen
+
+## Voor locaties (partners)
+Horeca-uitbaters, strandclubs, evenementenlocaties en andere locaties kunnen Nero Charge gratis laten plaatsen. Er is geen aankoopprijs en geen installatiekost voor de locatie; de gast die een powerbank huurt, betaalt voor het gebruik. Aanvragen kan via https://www.nerocharge.be/partner.html
 
 ## Contact
 - Website: https://www.nerocharge.be
@@ -21,14 +43,11 @@ Nero Charge is actief in:
 - E-mail: nerocharge@outlook.com
 - Algemene voorwaarden: https://www.nerocharge.be/algemene-voorwaarden.html
 
-## Voor locaties (partners)
-Horeca-uitbaters, strandclubs en evenementenlocaties kunnen Nero Charge gratis installeren. Nero regelt installatie, logistiek en support. Locaties ontvangen een commissie op elke verhuur.
-
 ## Veelgestelde vragen
-- **Hoe werkt het?** Tap je bankkaart of gsm op het station, neem een powerbank, laad je telefoon op, breng hem terug.
+- **Hoe werkt het?** Tap je bankkaart of gsm op het station, neem een powerbank, laad je telefoon op en lever de powerbank in bij eender welk Nero-station.
 - **Heeft men een app nodig?** Nee, geen app vereist.
-- **Waar kan ik terugbrengen?** De powerbank moet teruggebracht worden bij hetzelfde station waar je hem gehuurd hebt.
+- **Waar kan ik terugbrengen?** Bij eender welk Nero-station in het netwerk. Facturatie stopt op het moment dat je de powerbank terugplaatst.
 - **Wat kost het?** Betaling per gebruik, transparante prijzen, geen verborgen kosten.
 
 ## Taal
-De website en dienst zijn beschikbaar in het Nederlands. De doelmarkt is België (Antwerpen en Knokke-Heist).
+De website en dienst zijn beschikbaar in het Nederlands. De doelmarkt is België.
