@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /crm.html
 
-Sitemap: https://www.nerocharge.be/sitemap.xml
+Sitemap: https://nerocharge.be/sitemap.xml

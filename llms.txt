@@ -12,10 +12,10 @@ Nero Charge is een Belgisch bedrijf dat powerbanks verhuurt via gedeelde Nero-la
 - Beschikbaar in België
 
 ## Stationmodellen
-- Indoor station met 24 slots: vrijstaand, voor binnenlocaties zoals hotellobby's, grote zalen en evenementen. Zie https://www.nerocharge.be/concertzaal.html
+- Indoor station met 24 slots: vrijstaand, voor binnenlocaties zoals hotellobby's, grote zalen en evenementen. Zie https://nerocharge.be/concertzaal.html
 - 8 slots met scherm: compact station voor drukbezochte bars en restaurants
 - 8 slots zonder scherm: compact station voor bars, toonbanken en kleinere ruimtes
-- Outdoor station met 24 slots: voor buitenlocaties zoals terrassen, festivals en evenementen. Zie https://www.nerocharge.be/festival.html
+- Outdoor station met 24 slots: voor buitenlocaties zoals terrassen, festivals en evenementen. Zie https://nerocharge.be/festival.html
 
 ## Locaties
 Nero Charge is actief op de volgende locaties (lijst bevat niet alle actieve locaties):
@@ -35,13 +35,13 @@ Nero Charge is actief op de volgende locaties (lijst bevat niet alle actieve loc
 - Recreatie: bowling, VR-arena's, hockey en vrijetijdsvoorzieningen
 
 ## Voor locaties (partners)
-Horeca-uitbaters, strandclubs, evenementenlocaties en andere locaties kunnen Nero Charge gratis laten plaatsen. Er is geen aankoopprijs en geen installatiekost voor de locatie; de gast die een powerbank huurt, betaalt voor het gebruik. Aanvragen kan via https://www.nerocharge.be/partner.html
+Horeca-uitbaters, strandclubs, evenementenlocaties en andere locaties kunnen Nero Charge gratis laten plaatsen. Er is geen aankoopprijs en geen installatiekost voor de locatie; de gast die een powerbank huurt, betaalt voor het gebruik. Aanvragen kan via https://nerocharge.be/partner.html
 
 ## Contact
-- Website: https://www.nerocharge.be
+- Website: https://nerocharge.be
 - Telefoon: +32 468 06 02 76
 - E-mail: nerocharge@outlook.com
-- Algemene voorwaarden: https://www.nerocharge.be/algemene-voorwaarden.html
+- Algemene voorwaarden: https://nerocharge.be/algemene-voorwaarden.html
 
 ## Veelgestelde vragen
 - **Hoe werkt het?** Tap je bankkaart of gsm op het station, neem een powerbank, laad je telefoon op en lever de powerbank in bij eender welk Nero-station.
