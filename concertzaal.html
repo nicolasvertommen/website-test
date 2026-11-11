@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Powerbankstation voor concertzalen en theaters — Nero Charge</title>
+  <meta name="description" content="Nero-powerbankstations voor concertzalen, theaters en grote binnenlocaties. Bezoekers laden contactloos op, jij investeert niets. Word partner.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Powerbankstation voor concertzalen en theaters — Nero Charge">
+  <meta property="og:description" content="Nero-powerbankstations voor concertzalen, theaters en grote binnenlocaties. Bezoekers laden contactloos op, jij investeert niets.">
+  <meta property="og:image" content="https://www.nerocharge.be/images/NERO indoor powerbankstation met 24 slots.png">
+  <meta property="og:url" content="https://www.nerocharge.be/concertzaal.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" href="images/logo.png.png">
+  <link rel="apple-touch-icon" href="images/logo.png.png">
+  <style>
+    .fest-hero {
+      padding: 160px 24px 80px;
+      background: var(--gray-50, #f8f9fa);
+    }
+    .fest-hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .fest-tag {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+    }
+    .fest-hero h1 {
+      font-size: 2.8rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--gray-900, #111);
+      margin-bottom: 20px;
+    }
+    .fest-hero p {
+      font-size: 1.1rem;
+      color: var(--gray-600, #555);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+    .fest-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+    .fest-chip {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--gray-700, #444);
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.08);
+      padding: 8px 14px;
+      border-radius: 100px;
+    }
+    .fest-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+    .fest-hero-img {
+      width: 100%;
+      max-height: 480px;
+      object-fit: contain;
+    }
+    .fest-section {
+      padding: 96px 24px;
+    }
+    .fest-section.alt {
+      background: var(--gray-50, #f8f9fa);
+    }
+    .fest-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .fest-section h2 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: var(--gray-900, #111);
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    .fest-lead {
+      font-size: 1.05rem;
+      color: var(--gray-600, #555);
+      line-height: 1.7;
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 48px;
+    }
+    .fest-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .fest-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      border: 1px solid rgba(0,0,0,0.04);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+    .fest-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gray-900, #111);
+      margin-bottom: 10px;
+    }
+    .fest-card p {
+      font-size: 0.92rem;
+      color: var(--gray-600, #555);
+      line-height: 1.6;
+    }
+    .fest-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .fest-step {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+    .fest-step-num {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .fest-step h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gray-900, #111);
+      margin: 8px 0 10px;
+    }
+    .fest-step p {
+      font-size: 0.92rem;
+      color: var(--gray-600, #555);
+      line-height: 1.6;
+    }
+    .fest-product {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .fest-product img {
+      width: 100%;
+      max-height: 460px;
+      object-fit: contain;
+    }
+    .fest-product h2 {
+      text-align: left;
+    }
+    .fest-product ul {
+      list-style: none;
+      margin: 24px 0 0;
+      display: grid;
+      gap: 12px;
+    }
+    .fest-product li {
+      font-size: 0.98rem;
+      color: var(--gray-700, #444);
+      padding-left: 24px;
+      position: relative;
+      line-height: 1.6;
+    }
+    .fest-product li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gradient);
+    }
+    .fest-cta {
+      background: linear-gradient(135deg, rgba(0,232,123,0.12), rgba(0,201,255,0.12));
+      border-radius: var(--radius-xl);
+      padding: 56px 40px;
+      text-align: center;
+    }
+    .fest-cta h2 {
+      margin-bottom: 14px;
+    }
+    .fest-cta p {
+      font-size: 1rem;
+      color: var(--gray-700, #444);
+      line-height: 1.7;
+      max-width: 560px;
+      margin: 0 auto 28px;
+    }
+    .fest-btn {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+    }
+    .fest-btn-outline {
+      display: inline-block;
+      color: var(--gray-900, #111);
+      padding: 14px 24px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid rgba(0,0,0,0.15);
+    }
+    @media (max-width: 1024px) {
+      .fest-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 768px) {
+      .fest-hero {
+        padding: 120px 16px 56px;
+      }
+      .fest-hero-inner,
+      .fest-product {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .fest-hero h1 {
+        font-size: 2rem;
+      }
+      .fest-section {
+        padding: 64px 16px;
+      }
+      .fest-section h2 {
+        font-size: 1.7rem;
+      }
+      .fest-steps {
+        grid-template-columns: 1fr;
+      }
+      .fest-cta {
+        padding: 40px 20px;
+      }
+    }
+    @media (max-width: 600px) {
+      .fest-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-inner container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png.png" alt="Nero Charge logo" class="logo-img">
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html#how-it-works">Hoe het werkt</a>
+        <a href="index.html#product">Product</a>
+        <a href="index.html#benefits">Voordelen</a>
+        <a href="index.html#testimonials">Klanten</a>
+        <a href="index.html#modellen">Modellen</a>
+        <a href="blog/">Blog</a>
+      </div>
+      <div class="nav-actions">
+        <a href="partner.html" class="btn btn-primary btn-sm">Word partner</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="fest-hero">
+    <div class="fest-hero-inner">
+      <div>
+        <span class="fest-tag">Voor concertzalen & theaters</span>
+        <h1>Powerbankstations voor je zaal.</h1>
+        <p>Bezoekers huren contactloos een powerbank en laden hun telefoon op tijdens de pauze, het concert of de voorstelling. Jij investeert niets; wij zorgen voor het station en de service.</p>
+        <div class="fest-chips">
+          <span class="fest-chip">€0 investering</span>
+          <span class="fest-chip">Geen personeel nodig</span>
+          <span class="fest-chip">Indoor model met 24 slots</span>
+        </div>
+        <div class="fest-actions">
+          <a href="#" data-open-partner class="fest-btn">Word partner →</a>
+          <a href="#product" class="fest-btn-outline">Bekijk het zaalstation</a>
+        </div>
+      </div>
+      <img class="fest-hero-img" src="images/NERO indoor powerbankstation met 24 slots.png" alt="NERO indoor powerbankstation met 24 slots">
+    </div>
+  </section>
+
+  <!-- WAAROM -->
+  <section class="fest-section alt">
+    <div class="fest-inner">
+      <h2>Waarom Nero in je zaal?</h2>
+      <p class="fest-lead">Het concert of de voorstelling duurt lang. Met Nero blijven bezoekers bereikbaar, maken ze foto's en houden ze hun tickets bij de hand.</p>
+      <div class="fest-grid">
+        <div class="fest-card">
+          <h3>Betere bezoekerservaring</h3>
+          <p>Foto's maken, tickets tonen en na afloop een taxi bestellen: met een volle telefoon blijft de avond soepel.</p>
+        </div>
+        <div class="fest-card">
+          <h3>€0 investering</h3>
+          <p>Je betaalt geen aankoopprijs en geen installatiekosten. Alleen de bezoeker die een powerbank huurt, betaalt voor het gebruik.</p>
+        </div>
+        <div class="fest-card">
+          <h3>Extra omzet</h3>
+          <p>Je verdient mee aan elke verhuur, zonder extra werk voor je team.</p>
+        </div>
+        <div class="fest-card">
+          <h3>Geen personeel nodig</h3>
+          <p>Bezoekers huren en betalen zelf aan het station. Je team hoeft er niets voor te doen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEZOEKERS -->
+  <section class="fest-section">
+    <div class="fest-inner">
+      <h2>Zo werkt het voor bezoekers</h2>
+      <p class="fest-lead">Huren, opladen en teruggeven: zo eenvoudig dat niemand uitleg nodig heeft.</p>
+      <div class="fest-steps">
+        <div class="fest-step">
+          <span class="fest-step-num">01</span>
+          <h3>Huur contactloos</h3>
+          <p>Betaal met je bankkaart of Apple Pay en de powerbank staat klaar.</p>
+        </div>
+        <div class="fest-step">
+          <span class="fest-step-num">02</span>
+          <h3>Laad op tijdens de voorstelling</h3>
+          <p>Alle kabels zitten al in de powerbank. Zo blijft de telefoon bruikbaar tot het einde.</p>
+        </div>
+        <div class="fest-step">
+          <span class="fest-step-num">03</span>
+          <h3>Breng terug bij eender welk station</h3>
+          <p>Lever de powerbank in bij elk Nero-station in het netwerk. Facturatie stopt meteen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT -->
+  <section class="fest-section alt" id="product">
+    <div class="fest-inner fest-product">
+      <img src="images/NERO indoor powerbankstation met 24 slots.png" alt="NERO indoor powerbankstation met 24 slots">
+      <div>
+        <span class="fest-tag">Het zaalstation</span>
+        <h2>Indoor model met 24 slots</h2>
+        <p class="fest-lead" style="text-align:left; margin: 0;">Een vrijstaand station voor binnen, met 24 powerbanks. Het past in foyers, lobby's en grote zalen waar veel bezoekers tegelijk willen opladen.</p>
+        <ul>
+          <li>24 powerbanks in één station</li>
+          <li>Vrijstaand, voor binnenlocaties</li>
+          <li>Contactloos betalen, alle kabels ingebouwd</li>
+          <li>Teruggeven bij elk Nero-station in het netwerk</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- WERKWIJZE -->
+  <section class="fest-section">
+    <div class="fest-inner">
+      <h2>Van plaatsing tot afronding</h2>
+      <p class="fest-lead">We bespreken samen waar het station komt, zodat het goed zichtbaar staat zonder de doorgang te hinderen.</p>
+      <div class="fest-steps">
+        <div class="fest-step">
+          <span class="fest-step-num">01</span>
+          <h3>Vóór de voorstelling</h3>
+          <p>We bepalen samen de plek in je foyer of lobby en plaatsen het station.</p>
+        </div>
+        <div class="fest-step">
+          <span class="fest-step-num">02</span>
+          <h3>Tijdens de voorstelling</h3>
+          <p>Bezoekers huren en betalen zelf. Je team hoeft er niets voor te doen.</p>
+        </div>
+        <div class="fest-step">
+          <span class="fest-step-num">03</span>
+          <h3>Na afloop</h3>
+          <p>We halen het station weer op, zodat je zaal direct vrij is.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="fest-section alt">
+    <div class="fest-inner">
+      <div class="fest-cta">
+        <h2>Klaar voor een zaal zonder lege telefoons?</h2>
+        <p>Vul het formulier in en we nemen contact op om je zaal door te spreken: plaatsing, aantal stations en wat het jullie oplevert.</p>
+        <a href="#" data-open-partner class="fest-btn">Word partner →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="images/logo.png.png" alt="Nero Charge logo" class="logo-img footer-logo-img">
+          </a>
+          <p class="footer-desc">Het snelst groeiende powerbank oplaadnetwerk van Europa.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h5>Product</h5>
+            <a href="index.html#how-it-works">Hoe het werkt</a>
+            <a href="index.html#product">Functies</a>
+            <a href="index.html#faq">FAQ</a>
+          </div>
+          <div class="footer-col">
+            <h5>Bedrijf</h5>
+            <a href="#">Over ons</a>
+            <a href="#">Vacatures</a>
+            <a href="pers.html">Pers</a>
+          </div>
+          <div class="footer-col">
+            <h5>Partners</h5>
+            <a href="partner.html">Word een partner</a>
+            <a href="mailto:nerocharge@outlook.com">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Nero. Alle rechten voorbehouden.</p>
+        <div class="footer-legal">
+          <a href="privacybeleid.html">Privacy</a>
+          <a href="algemene-voorwaarden.html">Algemene voorwaarden</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PARTNER MODAL -->
+  <div class="modal-overlay" id="partnerModal">
+    <div class="modal modal-partner">
+      <div class="modal-header">
+        <div>
+          <h3>Word partner</h3>
+          <p class="modal-subtitle">Ontvang een gratis Nero laadstation in jouw zaal.</p>
+        </div>
+        <button class="modal-close" data-close-modal aria-label="Close">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="partner-form" id="partnerForm">
+          <div class="form-group">
+            <label for="venueName">Naam zaal of locatie</label>
+            <input type="text" id="venueName" name="venueName" placeholder="bv. Concertzaal XYZ" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contactPerson">Contactpersoon</label>
+              <input type="text" id="contactPerson" name="contactPerson" placeholder="Volledige naam" required>
+            </div>
+            <div class="form-group">
+              <label for="contactPhone">Telefoonnummer <span style="font-weight:400;color:var(--gray-500)">(optioneel)</span></label>
+              <input type="tel" id="contactPhone" name="contactPhone" placeholder="+32 ...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Email</label>
+            <input type="email" id="contactEmail" name="contactEmail" placeholder="you@venue.com" required>
+          </div>
+          <div class="form-group">
+            <label for="venueLocation">Locatie / Stad <span style="font-weight:400;color:var(--gray-500)">(optioneel)</span></label>
+            <input type="text" id="venueLocation" name="venueLocation" placeholder="bv. Brussel, België">
+          </div>
+          <div class="form-group">
+            <label for="venueType">Type locatie</label>
+            <select id="venueType" name="venueType" required>
+              <option value="" disabled selected>Selecteer type...</option>
+              <option value="culture">Concertzaal / Theater</option>
+              <option value="festival">Festival / Evenement</option>
+              <option value="bar">Bar / Restaurant</option>
+              <option value="club">Nachtclub</option>
+              <option value="hotel">Hotel / Hostel</option>
+              <option value="coworking">Coworking / Kantoor</option>
+              <option value="retail">Winkel / Retail</option>
+              <option value="beach">Beachclub / Terras</option>
+              <option value="other">Andere</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-full">
+            Aanvraag indienen
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+        <div class="form-success" id="formSuccess" style="display:none;">
+          <div class="success-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" fill="rgba(0,232,123,0.1)"/><path d="M16 24l6 6 10-12" stroke="#00e87b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Aanvraag ontvangen!</h3>
+          <p>Bedankt voor je interesse. Ons partnershipsteam neemt binnen 24 uur contact met je op.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+  <script src="chat-widget.js" defer></script>
+  <!-- Instantly Analytics & CRM -->
+  <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="1mR2xqMDkzLLijSLS" data-version="062024"></script>
+</body>
+</html>
