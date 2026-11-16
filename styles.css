@@ -1532,6 +1532,52 @@ img {
   background: var(--gradient-subtle);
 }
 
+.map-near-btn {
+  align-self: flex-start;
+  background: var(--black);
+  color: var(--white);
+  border: none;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.map-status {
+  font-size: 0.85rem;
+  color: var(--gray-600);
+  min-height: 1.2em;
+}
+
+.map-route {
+  font-size: 0.88rem;
+  color: var(--gray-700);
+  line-height: 1.5;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--gradient-subtle);
+}
+
+.map-route a {
+  display: inline-block;
+  margin-top: 6px;
+  color: var(--green);
+  font-weight: 600;
+}
+
+.map-route[hidden] {
+  display: none;
+}
+
+.map-dist {
+  margin-left: auto;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gray-600);
+  white-space: nowrap;
+}
+
 .map-loc-dot {
   width: 10px;
   height: 10px;

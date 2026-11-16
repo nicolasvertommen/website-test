@@ -423,7 +423,7 @@ document.addEventListener('DOMContentLoaded', () => {
         );
 
       marker.on('click', () => {
-        highlightSidebar(venue.id);
+        selectVenue(venue.id);
       });
 
       leafletMarkers[venue.id] = marker;
@@ -434,31 +434,128 @@ document.addEventListener('DOMContentLoaded', () => {
     leafletMap.fitBounds(group.getBounds().pad(0.3));
   }
 
-  function highlightSidebar(venueId) {
-    const mapLocations = document.querySelectorAll('.map-location');
-    mapLocations.forEach(loc => {
-      loc.classList.toggle('active', loc.dataset.venue === venueId);
-      if (loc.dataset.venue === venueId) {
-        loc.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
-    });
+  let userLatLng = null;
+  let userMarker = null;
+  let routeLayer = null;
+  const mapStatus = document.getElementById('mapStatus');
+  const mapRoute = document.getElementById('mapRoute');
+
+  function distanceKm(a, b) {
+    const R = 6371;
+    const toRad = d => d * Math.PI / 180;
+    const dLat = toRad(b.lat - a.lat);
+    const dLng = toRad(b.lng - a.lng);
+    const h = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(a.lat)) * Math.cos(toRad(b.lat)) * Math.sin(dLng / 2) ** 2;
+    return 2 * R * Math.asin(Math.sqrt(h));
   }
 
-  // Sidebar click → fly to marker
+  function formatKm(km) {
+    return km < 1 ? `${Math.round(km * 1000)} m` : `${km.toFixed(1).replace('.', ',')} km`;
+  }
+
+  function setMapStatus(text) {
+    if (mapStatus) mapStatus.textContent = text;
+  }
+
+  function sortLocationsByDistance() {
+    const list = document.getElementById('mapLocations');
+    const items = [...list.querySelectorAll('.map-location')];
+    const byId = Object.fromEntries(venues.map(v => [v.id, v]));
+    items.forEach(loc => {
+      const km = distanceKm(userLatLng, byId[loc.dataset.venue]);
+      loc.dataset.km = km;
+      let label = loc.querySelector('.map-dist');
+      if (!label) {
+        label = document.createElement('span');
+        label.className = 'map-dist';
+        loc.appendChild(label);
+      }
+      label.textContent = formatKm(km);
+    });
+    items
+      .sort((a, b) => a.dataset.km - b.dataset.km)
+      .forEach(loc => list.appendChild(loc));
+  }
+
+  function locateUser() {
+    if (!navigator.geolocation) {
+      setMapStatus('Je browser ondersteunt geen locatiebepaling.');
+      return;
+    }
+    setMapStatus('Locatie bepalen...');
+    navigator.geolocation.getCurrentPosition(
+      pos => {
+        userLatLng = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+        if (userMarker) userMarker.remove();
+        userMarker = L.circleMarker([userLatLng.lat, userLatLng.lng], {
+          radius: 8, color: '#ffffff', weight: 3, fillColor: '#00c9ff', fillOpacity: 1,
+        }).addTo(leafletMap).bindTooltip('Jij bent hier');
+        sortLocationsByDistance();
+        const nearest = [...document.querySelectorAll('.map-location')]
+          .slice(0, 3)
+          .map(loc => leafletMarkers[loc.dataset.venue]);
+        leafletMap.fitBounds(L.featureGroup([userMarker, ...nearest]).getBounds().pad(0.3));
+        setMapStatus('Stations gesorteerd op afstand. Kies een station voor de route.');
+      },
+      () => setMapStatus('Je locatie kon niet worden bepaald. Controleer of je toegang tot je locatie hebt gegeven.'),
+      { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 }
+    );
+  }
+
+  async function drawRoute(venue) {
+    if (routeLayer) routeLayer.remove();
+    const layer = L.layerGroup().addTo(leafletMap);
+    routeLayer = layer;
+
+    const googleUrl = `https://www.google.com/maps/dir/?api=1&origin=${userLatLng.lat},${userLatLng.lng}&destination=${venue.lat},${venue.lng}`;
+    const straight = distanceKm(userLatLng, venue);
+    const showInfo = (detail) => {
+      mapRoute.innerHTML = `<strong>${venue.name}</strong><br>${detail}<br><a href="${googleUrl}" target="_blank" rel="noopener">Route openen in Google Maps</a>`;
+      mapRoute.hidden = false;
+    };
+
+    try {
+      const url = `https://router.project-osrm.org/route/v1/driving/${userLatLng.lng},${userLatLng.lat};${venue.lng},${venue.lat}?overview=full&geometries=geojson`;
+      const data = await (await fetch(url)).json();
+      const route = data.routes && data.routes[0];
+      if (!route) throw new Error('geen route');
+      if (routeLayer !== layer) return;
+      const coords = route.geometry.coordinates.map(([lng, lat]) => [lat, lng]);
+      L.polyline(coords, { color: '#00c9ff', weight: 5 }).addTo(layer);
+      leafletMap.fitBounds(L.polyline(coords).getBounds().pad(0.2));
+      const minutes = Math.round(route.duration / 60);
+      showInfo(`${formatKm(route.distance / 1000)} · ca. ${minutes} min met de auto`);
+    } catch (err) {
+      if (routeLayer !== layer) return;
+      L.polyline([[userLatLng.lat, userLatLng.lng], [venue.lat, venue.lng]], {
+        color: '#00c9ff', weight: 3, dashArray: '6 8',
+      }).addTo(layer);
+      showInfo(`${formatKm(straight)} in vogelvlucht (routeberekening niet beschikbaar)`);
+    }
+  }
+
+  function selectVenue(venueId) {
+    const venue = venues.find(v => v.id === venueId);
+    document.querySelectorAll('.map-location').forEach(l => {
+      l.classList.toggle('active', l.dataset.venue === venueId);
+    });
+    if (!venue || !leafletMap) return;
+    if (userLatLng) {
+      drawRoute(venue);
+    } else {
+      const marker = leafletMarkers[venueId];
+      leafletMap.flyTo(marker.getLatLng(), 16, { duration: 0.8 });
+      marker.openPopup();
+    }
+  }
+
   const mapLocations = document.querySelectorAll('.map-location');
   mapLocations.forEach(loc => {
-    loc.addEventListener('click', () => {
-      const venueId = loc.dataset.venue;
-      mapLocations.forEach(l => l.classList.remove('active'));
-      loc.classList.add('active');
-
-      const marker = leafletMarkers[venueId];
-      if (marker && leafletMap) {
-        leafletMap.flyTo(marker.getLatLng(), 16, { duration: 0.8 });
-        marker.openPopup();
-      }
-    });
+    loc.addEventListener('click', () => selectVenue(loc.dataset.venue));
   });
+
+  const nearBtn = document.getElementById('mapNearBtn');
+  if (nearBtn) nearBtn.addEventListener('click', locateUser);
 
   const mapSearchInput = document.getElementById('mapSearch');
   if (mapSearchInput) {
