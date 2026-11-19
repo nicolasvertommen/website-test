@@ -1570,6 +1570,23 @@ img {
   display: none;
 }
 
+.map-gmaps {
+  display: none;
+  margin-top: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--green);
+  text-decoration: none;
+}
+
+.map-location.active .map-gmaps {
+  display: inline-block;
+}
+
+.map-gmaps:hover {
+  text-decoration: underline;
+}
+
 .map-dist {
   margin-left: auto;
   font-size: 0.8rem;

@@ -507,10 +507,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const layer = L.layerGroup().addTo(leafletMap);
     routeLayer = layer;
 
-    const googleUrl = `https://www.google.com/maps/dir/?api=1&origin=${userLatLng.lat},${userLatLng.lng}&destination=${venue.lat},${venue.lng}`;
     const straight = distanceKm(userLatLng, venue);
     const showInfo = (detail) => {
-      mapRoute.innerHTML = `<strong>${venue.name}</strong><br>${detail}<br><a href="${googleUrl}" target="_blank" rel="noopener">Route openen in Google Maps</a>`;
+      mapRoute.innerHTML = `<strong>${venue.name}</strong><br>${detail}`;
       mapRoute.hidden = false;
     };
 
@@ -550,8 +549,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const mapLocations = document.querySelectorAll('.map-location');
+  const venueById = Object.fromEntries(venues.map(v => [v.id, v]));
   mapLocations.forEach(loc => {
     loc.addEventListener('click', () => selectVenue(loc.dataset.venue));
+
+    const venue = venueById[loc.dataset.venue];
+    const link = document.createElement('a');
+    link.className = 'map-gmaps';
+    link.href = `https://www.google.com/maps/dir/?api=1&destination=${venue.lat},${venue.lng}`;
+    link.target = '_blank';
+    link.rel = 'noopener';
+    link.textContent = 'Route openen in Google Maps';
+    link.addEventListener('click', e => e.stopPropagation());
+    loc.querySelector('h4').parentElement.appendChild(link);
   });
 
   const nearBtn = document.getElementById('mapNearBtn');
