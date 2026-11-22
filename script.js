@@ -284,6 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize Leaflet map when map modal opens
     if (modal === mapModal) {
+      document.body.classList.add('map-open');
       setTimeout(() => {
         initLeafletMap();
       }, 100);
@@ -293,6 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function closeModal(modal) {
     modal.classList.remove('open');
     document.body.style.overflow = '';
+    if (modal === mapModal) document.body.classList.remove('map-open');
   }
 
   document.querySelectorAll('[data-open-map]').forEach(btn => {
@@ -567,17 +569,40 @@ document.addEventListener('DOMContentLoaded', () => {
   const nearBtn = document.getElementById('mapNearBtn');
   if (nearBtn) nearBtn.addEventListener('click', locateUser);
 
+  const venueCategory = {
+    radisson: 'hotel', astay: 'hotel',
+    zerolatency: 'leisure', zerolatencygent: 'leisure', bowlingstones: 'leisure', bowlingplanet: 'leisure',
+    dragons: 'leisure', pixels: 'leisure', leienpaleis: 'leisure', capital: 'leisure', boeckenberg: 'leisure',
+    theater: 'leisure', athena: 'leisure', elcitadel: 'leisure', hofvanreyen: 'leisure', ternesse: 'leisure',
+    kikibeach: 'strand', indibeach: 'strand', knokkestrand: 'strand', yssisbeach: 'strand',
+    lichttorenstrand: 'strand', brunellos: 'strand', put19: 'strand', oosthoek: 'strand',
+  };
+  mapLocations.forEach(loc => {
+    loc.dataset.cat = venueCategory[loc.dataset.venue] || 'horeca';
+  });
+
+  let activeCat = 'all';
   const mapSearchInput = document.getElementById('mapSearch');
-  if (mapSearchInput) {
-    mapSearchInput.addEventListener('input', () => {
-      const query = mapSearchInput.value.toLowerCase().trim();
-      mapLocations.forEach(loc => {
-        const venue = loc.dataset.venue.toLowerCase();
-        const name = loc.querySelector('h4').textContent.toLowerCase();
-        loc.style.display = (venue.includes(query) || name.includes(query)) ? '' : 'none';
-      });
+  const applyMapFilters = () => {
+    const query = mapSearchInput ? mapSearchInput.value.toLowerCase().trim() : '';
+    mapLocations.forEach(loc => {
+      const matchesSearch = !query
+        || loc.dataset.venue.toLowerCase().includes(query)
+        || loc.querySelector('h4').textContent.toLowerCase().includes(query);
+      const matchesCat = activeCat === 'all' || loc.dataset.cat === activeCat;
+      loc.style.display = matchesSearch && matchesCat ? '' : 'none';
     });
-  }
+  };
+  if (mapSearchInput) mapSearchInput.addEventListener('input', applyMapFilters);
+
+  const mapChips = document.querySelectorAll('.map-chip');
+  mapChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      activeCat = chip.dataset.cat;
+      mapChips.forEach(c => c.classList.toggle('active', c === chip));
+      applyMapFilters();
+    });
+  });
 
   // ---- Partner form submission (Formspree) ----
   const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mqegdknv';
