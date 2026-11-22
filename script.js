@@ -389,10 +389,10 @@ document.addEventListener('DOMContentLoaded', () => {
   function createNeroIcon() {
     return L.divIcon({
       className: 'nero-marker',
-      html: '<div class="nero-marker-inner"></div>',
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -34],
+      html: '<div class="nero-marker-inner">N</div>',
+      iconSize: [36, 36],
+      iconAnchor: [18, 18],
+      popupAnchor: [0, -20],
     });
   }
 
