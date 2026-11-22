@@ -1577,7 +1577,7 @@ img {
   .sticky-partner {
     position: fixed;
     left: 12px;
-    right: 12px;
+    right: 84px;
     bottom: 12px;
     z-index: 900;
     display: flex;
