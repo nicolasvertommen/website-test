@@ -340,18 +340,11 @@ document.addEventListener('DOMContentLoaded', () => {
     { id: 'tabanco',  name: 'Tabanco',            lat: 51.2126684, lng: 4.3924124, address: 'Scheldestraat 36, 2000 Antwerpen' },
     { id: 'cantine',  name: 'Cantine Antwerp',    lat: 51.2110738, lng: 4.3963180, address: 'Scheldestraat 77, 2000 Antwerpen' },
 { id: 'zorro',    name: 'Bar Zorro',           lat: 51.2211635, lng: 4.4041597, address: 'Hendrik Conscienceplein 5, 2000 Antwerpen' },
-    { id: 'kikibeach',    name: 'Kiki Beach',        lat: 51.3447, lng: 3.2593, address: 'Zeedijk-Duinbergen 387, 8301 Knokke-Heist' },
-    { id: 'indibeach',    name: 'Indi Beach',        lat: 51.3535, lng: 3.2898, address: 'Zeedijk-Het Zoute 648, 8300 Knokke-Heist' },
-    { id: 'knokkestrand', name: 'Knokke Strand',     lat: 51.3539, lng: 3.2918, address: 'Zeedijk-Het Zoute 664, 8300 Knokke-Heist' },
-    { id: 'yssisbeach',       name: 'Yssis Beach',        lat: 51.3501, lng: 3.2822, address: 'Zeedijk-Albertstrand 542, 8300 Knokke-Heist' },
-    { id: 'lichttorenstrand', name: 'Lichttorenstrand',   lat: 51.3542, lng: 3.2938, address: 'Zeedijk-Het Zoute 680, 8300 Knokke-Heist' },
     { id: 'cordobar',        name: 'Cordobar',           lat: 51.2111453, lng: 4.3964871, address: 'Volkstraat 25, 2000 Antwerpen' },
     { id: 'fidele',          name: 'Fidele',             lat: 51.2107816, lng: 4.3898720, address: 'Wapenstraat 18, 2000 Antwerpen' },
     { id: 'barduport',       name: 'Bar Du Port',        lat: 51.2302109, lng: 4.4107686, address: 'Napoleonkaai 53, 2000 Antwerpen' },
     { id: 'barbossa',        name: 'Barbossa',           lat: 51.2129986, lng: 4.4052336, address: 'Sint-Jorispoort 1, 2000 Antwerpen' },
-    { id: 'brunellos',       name: "Brunello's",         lat: 51.3514, lng: 3.2839, address: 'Rubensplein, Albertstrand, 8300 Knokke-Heist' },
     { id: 'boeckenberg',     name: 'Boeckenberg sportcentrum', lat: 51.1956272, lng: 4.4711031, address: 'Grensstraat 9, 2100 Antwerpen' },
-    { id: 'put19',           name: 'Put 19',             lat: 51.3522783, lng: 3.3046392, address: 'Sparrendreef 74, 8300 Knokke-Heist' },
     { id: 'radisson',        name: 'Radisson Blu Brugge', lat: 51.1954130, lng: 3.2205573, address: 'Frank Van Ackerpromenade 17, 8000 Brugge' },
     { id: 'revista',         name: 'Revista',            lat: 51.2095779, lng: 4.3948830, address: 'Karel Rogierstraat 47, 2000 Antwerpen' },
     { id: 'bowlingstones',   name: 'Bowlingstones Wemmel', lat: 50.8953350, lng: 4.3106674, address: 'Steenweg op Brussel 397, 1780 Wemmel' },
@@ -381,8 +374,9 @@ document.addEventListener('DOMContentLoaded', () => {
     { id: 'bonaparte',       name: 'Bonaparte',           lat: 51.2214534, lng: 4.4008222, address: 'Grote Markt 21, 2000 Antwerpen' },
     { id: 'pixels',          name: 'Pixels on stage',     lat: 51.2077992, lng: 4.4739611, address: 'Corneel Franckstraat 25, 2100 Deurne' },
     { id: 'fenikshof',       name: 'Fenikshof',           lat: 50.9344514, lng: 4.3694655, address: 'Abdijstraat 20, 1850 Grimbergen' },
-    { id: 'oosthoek',        name: 'Brasserie Den Oosthoek', lat: 51.3488215, lng: 3.3278493, address: 'Oosthoekplein 25, 8300 Knokke-Heist' },
     { id: 'bowlingplanet',   name: 'Bowlingplanet',       lat: 51.3005472, lng: 4.4085373, address: 'Slijkweg 5, 2180 Antwerpen' },
+    { id: 'put19',           name: 'Put 19',             lat: 51.3522783, lng: 3.3046392, address: 'Sparrendreef 74, 8300 Knokke-Heist' },
+    { id: 'oosthoek',        name: 'Brasserie Den Oosthoek', lat: 51.3488215, lng: 3.3278493, address: 'Oosthoekplein 25, 8300 Knokke-Heist' },
   ];
 
   let leafletMap = null;
@@ -574,8 +568,6 @@ document.addEventListener('DOMContentLoaded', () => {
     zerolatency: 'leisure', zerolatencygent: 'leisure', bowlingstones: 'leisure', bowlingplanet: 'leisure',
     dragons: 'leisure', pixels: 'leisure', leienpaleis: 'leisure', capital: 'leisure', boeckenberg: 'leisure',
     theater: 'leisure', athena: 'leisure', elcitadel: 'leisure', hofvanreyen: 'leisure', ternesse: 'leisure',
-    kikibeach: 'strand', indibeach: 'strand', knokkestrand: 'strand', yssisbeach: 'strand',
-    lichttorenstrand: 'strand', brunellos: 'strand', put19: 'strand', oosthoek: 'strand',
   };
   mapLocations.forEach(loc => {
     loc.dataset.cat = venueCategory[loc.dataset.venue] || 'horeca';
