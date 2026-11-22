@@ -350,27 +350,11 @@
       </div>
       <div class="modal-body">
         <form class="partner-form" id="partnerForm">
+        <div class="partner-step" data-step="1">
+          <p class="partner-step-label">Stap 1 van 2 · Over je zaak</p>
           <div class="form-group">
             <label for="venueName">Naam locatie</label>
             <input type="text" id="venueName" name="venueName" placeholder="bv. Het Grand Caf&eacute;" required>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="contactPerson">Contactpersoon</label>
-              <input type="text" id="contactPerson" name="contactPerson" placeholder="Volledige naam" required>
-            </div>
-            <div class="form-group">
-              <label for="contactPhone">Telefoonnummer <span style="font-weight:400;color:var(--gray-500)">(optioneel)</span></label>
-              <input type="tel" id="contactPhone" name="contactPhone" placeholder="+32 ...">
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="contactEmail">Email</label>
-            <input type="email" id="contactEmail" name="contactEmail" placeholder="you@venue.com" required>
-          </div>
-          <div class="form-group">
-            <label for="venueLocation">Locatie / Stad <span style="font-weight:400;color:var(--gray-500)">(optioneel)</span></label>
-            <input type="text" id="venueLocation" name="venueLocation" placeholder="bv. Brussel, België">
           </div>
           <div class="form-group">
             <label for="venueType">Type locatie</label>
@@ -387,11 +371,36 @@
               <option value="other">Andere</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-primary btn-lg btn-full">
+          <div class="form-group">
+            <label for="venueLocation">Locatie / Stad <span style="font-weight:400;color:var(--gray-500)">(optioneel)</span></label>
+            <input type="text" id="venueLocation" name="venueLocation" placeholder="bv. Brussel, België">
+          </div>
+          <button type="button" class="btn btn-primary btn-lg btn-full" data-next-step>Volgende <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+        <div class="partner-step" data-step="2" hidden>
+          <p class="partner-step-label">Stap 2 van 2 · Jouw gegevens</p>
+          <div class="form-group">
+              <label for="contactPerson">Contactpersoon</label>
+              <input type="text" id="contactPerson" name="contactPerson" placeholder="Volledige naam" required>
+            </div>
+          <div class="form-group">
+            <label for="contactEmail">Email</label>
+            <input type="email" id="contactEmail" name="contactEmail" placeholder="you@venue.com" required>
+          </div>
+          <div class="form-group">
+              <label for="contactPhone">Telefoonnummer <span style="font-weight:400;color:var(--gray-500)">(optioneel)</span></label>
+              <input type="tel" id="contactPhone" name="contactPhone" placeholder="+32 ...">
+            </div>
+          <div class="partner-step-actions">
+            <button type="button" class="partner-back" data-prev-step>← Terug</button>
+            <button type="submit" class="btn btn-primary btn-lg btn-full">
             Aanvraag indienen
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-        </form>
+          </div>
+          <p class="partner-trust">Vrijblijvend · gratis plaatsing · we nemen binnen 24 uur contact op</p>
+        </div>
+      </form>
         <div class="form-success" id="formSuccess" style="display:none;">
           <div class="success-icon">
             <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" fill="rgba(0,232,123,0.1)"/><path d="M16 24l6 6 10-12" stroke="#00e87b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>

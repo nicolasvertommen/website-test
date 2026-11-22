@@ -585,7 +585,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const partnerForm = document.getElementById('partnerForm');
   const formSuccess = document.getElementById('formSuccess');
 
+  const stickyPartner = document.getElementById('stickyPartner');
+  if (stickyPartner) {
+    const toggleSticky = () => stickyPartner.classList.toggle('visible', window.scrollY > 500);
+    window.addEventListener('scroll', toggleSticky, { passive: true });
+    toggleSticky();
+  }
+
   if (partnerForm) {
+    const partnerSteps = partnerForm.querySelectorAll('.partner-step');
+    const showPartnerStep = (n) => {
+      partnerSteps.forEach(step => { step.hidden = step.dataset.step !== String(n); });
+    };
+    partnerForm.querySelector('[data-next-step]').addEventListener('click', () => {
+      const fields = [...partnerSteps[0].querySelectorAll('input, select')];
+      if (fields.every(field => field.reportValidity())) showPartnerStep(2);
+    });
+    partnerForm.querySelector('[data-prev-step]').addEventListener('click', () => showPartnerStep(1));
+    document.querySelectorAll('[data-open-partner]').forEach(btn => {
+      btn.addEventListener('click', () => showPartnerStep(1));
+    });
+
     partnerForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const submitBtn = partnerForm.querySelector('button[type="submit"]');
